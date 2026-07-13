@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Aryan Software Solutions">
+  <rect width="1200" height="630" fill="#1E293B"/>
+  <rect x="80" y="200" width="80" height="80" rx="12" fill="#2563EB"/>
+  <text x="120" y="255" text-anchor="middle" fill="#fff" font-family="Inter,sans-serif" font-size="36" font-weight="700">A</text>
+  <text x="190" y="230" fill="#fff" font-family="Inter,sans-serif" font-size="42" font-weight="700">Aryan Software Solutions</text>
+  <text x="190" y="275" fill="#94A3B8" font-family="Inter,sans-serif" font-size="22">Innovate. Develop. Secure.</text>
+  <text x="80" y="380" fill="#64748B" font-family="Inter,sans-serif" font-size="20">Enterprise Software Development &amp; Technology Consulting</text>
+</svg>

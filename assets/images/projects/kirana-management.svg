@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Kirana Management System">
+  <defs>
+    <linearGradient id="bgK" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#F8FAFF"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bgK)"/>
+
+  <rect x="60" y="40" width="680" height="130" rx="10" fill="#fff" stroke="#E6EEF8"/>
+  <rect x="80" y="70" width="140" height="70" rx="8" fill="#2563EB"/>
+  <rect x="240" y="70" width="420" height="70" rx="8" fill="#F1F5F9"/>
+  <text x="150" y="110" fill="#fff" font-family="Inter,sans-serif" font-size="16" font-weight="600" text-anchor="middle">POS</text>
+
+  <rect x="80" y="210" width="320" height="160" rx="12" fill="#fff" stroke="#E6EEF8"/>
+  <rect x="420" y="210" width="320" height="160" rx="12" fill="#fff" stroke="#E6EEF8"/>
+
+  <g transform="translate(110,240)">
+    <rect x="0" y="0" width="240" height="20" rx="4" fill="#EFF6FF"/>
+    <rect x="0" y="34" width="180" height="10" rx="4" fill="#C7D2FE"/>
+    <rect x="0" y="56" width="140" height="10" rx="4" fill="#A78BFA"/>
+  </g>
+
+  <g transform="translate(450,240)">
+    <rect x="0" y="0" width="200" height="12" rx="4" fill="#EFF6FF"/>
+    <rect x="0" y="28" width="160" height="12" rx="4" fill="#E2E8F0"/>
+    <rect x="0" y="56" width="140" height="12" rx="4" fill="#F1F5F9"/>
+  </g>
+
+  <text x="400" y="480" text-anchor="middle" fill="#475569" font-family="Inter,sans-serif" font-size="14">Kirana Management System</text>
+</svg>

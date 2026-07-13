@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="AI Threat Detection">
+  <defs>
+    <linearGradient id="bgT" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#071029"/>
+      <stop offset="100%" stop-color="#0B1220"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bgT)"/>
+
+  <!-- radar rings & alert -->
+  <g transform="translate(260,110)">
+    <circle cx="140" cy="110" r="120" fill="none" stroke="#2563EB" stroke-width="2" opacity="0.25"/>
+    <circle cx="140" cy="110" r="80" fill="none" stroke="#2563EB" stroke-width="2" opacity="0.35"/>
+    <circle cx="140" cy="110" r="40" fill="none" stroke="#EF4444" stroke-width="3"/>
+    <line x1="140" y1="70" x2="140" y2="50" stroke="#EF4444" stroke-width="2"/>
+  </g>
+
+  <!-- panels -->
+  <rect x="100" y="80" width="220" height="100" rx="8" fill="#071026" stroke="#142032"/>
+  <rect x="480" y="80" width="220" height="100" rx="8" fill="#071026" stroke="#142032"/>
+  <rect x="100" y="360" width="220" height="80" rx="8" fill="#071026" stroke="#142032"/>
+  <rect x="480" y="360" width="220" height="80" rx="8" fill="#071026" stroke="#142032"/>
+
+  <text x="220" y="130" text-anchor="middle" fill="#10B981" font-family="Inter,sans-serif" font-size="11">SECURE</text>
+  <text x="580" y="130" text-anchor="middle" fill="#EF4444" font-family="Inter,sans-serif" font-size="11">THREAT</text>
+
+  <text x="400" y="460" text-anchor="middle" fill="#94A3B8" font-family="Inter,sans-serif" font-size="14">Real-Time Threat Intelligence</text>
+</svg>
