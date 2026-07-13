@@ -36,6 +36,16 @@
         document.body.style.overflow = '';
       });
     });
+
+    // Close menu when clicking on the background overlay (left side of the drawer)
+    nav.addEventListener('click', (e) => {
+      if (e.target === nav || e.clientX < window.innerWidth - 280) {
+        nav.classList.remove('nav--open');
+        navToggle.classList.remove('nav-toggle--open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
+    });
   }
 
   /* ---------- Scroll Animations ---------- */
