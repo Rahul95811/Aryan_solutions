@@ -163,4 +163,106 @@
   const yearEl = document.querySelector('[data-year]');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+  /* ---------- Home Hero Service Slider ---------- */
+  function initHeroSlider() {
+    // Support both old card class and new showcase class
+    const card = document.querySelector('.hero-showcase-container') ||
+                 document.querySelector('.hero-slider-card');
+    if (!card) return;
+
+    const slides = card.querySelectorAll('.hero-showcase__slide, .hero-slider__slide');
+    const dots   = card.querySelectorAll('.showcase-dot, .hero-slider__dot');
+    const progressBar = card.querySelector('.showcase-progress-bar, .hero-slider__progress-bar');
+    if (!slides.length) return;
+
+    // Badge elements (only present in new showcase layout)
+    const badgeTitle = card.querySelector('.showcase-badge__title');
+    const badgeChips = card.querySelector('.showcase-badge__chips');
+
+    // Per-slide metadata: must match HTML order
+    const SLIDE_META = [
+      { title: 'Software Development', chips: 'Java  •  Spring Boot  •  MySQL' },
+      { title: 'Artificial Intelligence', chips: 'Python  •  Machine Learning  •  AI Systems' },
+      { title: 'Cybersecurity', chips: 'Network Security  •  Security Audits' },
+      { title: 'Web Development', chips: 'HTML5  •  CSS3  •  React' },
+      { title: 'Mobile Development', chips: 'Swift  •  Kotlin  •  Flutter' },
+      { title: 'Cloud Solutions', chips: 'AWS  •  Docker  •  Cloud Infrastructure' },
+      { title: 'IoT Solutions', chips: 'MQTT  •  Raspberry Pi  •  Smart Sensors' },
+      { title: 'Technology Consulting', chips: 'Agile  •  Architecture  •  IT Strategy' },
+    ];
+
+    let activeIndex = 0;
+
+    function updateBadge(index) {
+      const meta = SLIDE_META[index];
+      if (!meta) return;
+      if (badgeTitle) {
+        badgeTitle.style.opacity = '0';
+        badgeTitle.style.transform = 'translateY(4px)';
+        setTimeout(() => {
+          badgeTitle.textContent = meta.title;
+          badgeTitle.style.transition = 'opacity 0.35s ease, transform 0.35s ease';
+          badgeTitle.style.opacity = '1';
+          badgeTitle.style.transform = 'translateY(0)';
+        }, 180);
+      }
+      if (badgeChips) {
+        setTimeout(() => {
+          badgeChips.textContent = meta.chips;
+        }, 180);
+      }
+    }
+
+    function goToSlide(index) {
+      // Remove active state from current slide and dot
+      slides[activeIndex].classList.remove('active');
+      if (dots[activeIndex]) dots[activeIndex].classList.remove('active');
+
+      // Set new active index
+      activeIndex = index;
+
+      // Add active state to new slide and dot
+      slides[activeIndex].classList.add('active');
+      if (dots[activeIndex]) dots[activeIndex].classList.add('active');
+
+      // Update floating badge
+      updateBadge(activeIndex);
+
+      // Reset progress bar animation
+      card.classList.remove('autoplay-running');
+      void progressBar.offsetWidth; // Force reflow to restart animation
+      card.classList.add('autoplay-running');
+    }
+
+    function nextSlide() {
+      const nextIndex = (activeIndex + 1) % slides.length;
+      goToSlide(nextIndex);
+    }
+
+    // Dot indicators click handlers
+    dots.forEach((dot) => {
+      dot.addEventListener('click', () => {
+        const slideIndex = parseInt(dot.getAttribute('data-slide'), 10);
+        if (slideIndex !== activeIndex) {
+          goToSlide(slideIndex);
+        }
+      });
+    });
+
+    // Listen to progress bar animation completion to transition automatically
+    if (progressBar) {
+      progressBar.addEventListener('animationend', () => {
+        nextSlide();
+      });
+    }
+
+    // Start progress bar animation initially
+    card.classList.add('autoplay-running');
+    updateBadge(0);
+  }
+
+  // Initialize the slider
+  initHeroSlider();
+
 })();
+

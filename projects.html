@@ -63,6 +63,11 @@
       background-size: 14px 14px;
     }
 
+    .tech-dot-grid-light {
+      background-image: radial-gradient(rgba(37, 99, 235, 0.05) 1px, transparent 1px);
+      background-size: 14px 14px;
+    }
+
     .modal-backdrop {
       transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
@@ -107,61 +112,7 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
 
-        <!-- SLA Stats Dashboard Row -->
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
-          <div
-            class="p-4 rounded-xl border border-slate-200 bg-slate-50/50 flex items-center space-x-3.5 shadow-xs transition-all duration-200 hover:shadow-md hover:border-slate-300">
-            <div
-              class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 border text-emerald-600 bg-emerald-50 border-emerald-150">
-              <i data-lucide="check" class="w-5 h-5"></i>
-            </div>
-            <div>
-              <span class="text-[9px] text-slate-400 font-mono font-bold block uppercase tracking-wider">SLA Complete
-                Delivery</span>
-              <strong class="text-sm sm:text-base text-slate-800 font-extrabold block">100%</strong>
-              <span class="text-[10px] text-slate-400 font-normal block truncate">Verified Production Codebases</span>
-            </div>
-          </div>
-          <div
-            class="p-4 rounded-xl border border-slate-200 bg-slate-50/50 flex items-center space-x-3.5 shadow-xs transition-all duration-200 hover:shadow-md hover:border-slate-300">
-            <div
-              class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 border text-[#2563EB] bg-blue-50 border-blue-150">
-              <i data-lucide="shield" class="w-5 h-5"></i>
-            </div>
-            <div>
-              <span class="text-[9px] text-slate-400 font-mono font-bold block uppercase tracking-wider">Security Audits
-                Passed</span>
-              <strong class="text-sm sm:text-base text-slate-800 font-extrabold block">42 Passed</strong>
-              <span class="text-[10px] text-slate-400 font-normal block truncate">Zero Critical Vulnerabilities</span>
-            </div>
-          </div>
-          <div
-            class="p-4 rounded-xl border border-slate-200 bg-slate-50/50 flex items-center space-x-3.5 shadow-xs transition-all duration-200 hover:shadow-md hover:border-slate-300">
-            <div
-              class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 border text-sky-600 bg-sky-50 border-sky-150">
-              <i data-lucide="layers" class="w-5 h-5"></i>
-            </div>
-            <div>
-              <span class="text-[9px] text-slate-400 font-mono font-bold block uppercase tracking-wider">Active SLA
-                Commitments</span>
-              <strong class="text-sm sm:text-base text-slate-800 font-extrabold block">12 Client Nodes</strong>
-              <span class="text-[10px] text-slate-400 font-normal block truncate">Monitored Telemetry Systems</span>
-            </div>
-          </div>
-          <div
-            class="p-4 rounded-xl border border-slate-200 bg-slate-50/50 flex items-center space-x-3.5 shadow-xs transition-all duration-200 hover:shadow-md hover:border-slate-300">
-            <div
-              class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 border text-rose-600 bg-rose-50 border-rose-150">
-              <i data-lucide="clock" class="w-5 h-5"></i>
-            </div>
-            <div>
-              <span class="text-[9px] text-slate-400 font-mono font-bold block uppercase tracking-wider">Emergency
-                Hotfix SLA</span>
-              <strong class="text-sm sm:text-base text-slate-800 font-extrabold block">&lt; 4 Hours</strong>
-              <span class="text-[10px] text-slate-400 font-normal block truncate">Rapid Security Dispatcher</span>
-            </div>
-          </div>
-        </div>
+
 
         <!-- Section Header Area -->
         <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
@@ -789,100 +740,118 @@
       aria-modal="true" aria-labelledby="modal-title">
       <!-- Backdrop -->
       <div id="modal-backdrop"
-        class="absolute inset-0 bg-slate-900/60 backdrop-blur-md opacity-0 modal-backdrop transition-opacity duration-300"
+        class="absolute inset-0 bg-slate-900/40 backdrop-blur-md opacity-0 modal-backdrop transition-opacity duration-300"
         onclick="closeProjectDashboard()"></div>
 
       <!-- Content Container -->
       <div id="modal-container"
-        class="relative bg-slate-900 border border-slate-800 rounded-3xl w-full max-w-5xl shadow-2xl overflow-hidden flex flex-col md:flex-row transform scale-95 opacity-0 modal-content-box transition-all duration-300 max-h-[90vh]">
+        class="relative bg-white/95 border border-slate-200/80 rounded-3xl w-full max-w-5xl shadow-2xl overflow-hidden flex flex-col md:flex-row transform scale-95 opacity-0 modal-content-box transition-all duration-300 max-h-[90vh]">
 
-        <!-- Left telemetry panel (visual/technical stats) -->
-        <div
-          class="w-full md:w-2/5 bg-slate-950 border-r border-slate-800 p-6 flex flex-col justify-between relative overflow-hidden shrink-0">
-          <div class="absolute inset-0 opacity-10 tech-dot-grid pointer-events-none"></div>
+        <!-- Left summary panel (project summary, network flow, and KPI grid) -->
+        <div id="modal-left-panel"
+          class="w-full md:w-[42%] border-r border-slate-200/80 p-6 flex flex-col justify-between relative overflow-hidden shrink-0 transition-all duration-500">
+          <!-- Light decorative dot grid -->
+          <div class="absolute inset-0 opacity-[0.4] tech-dot-grid-light pointer-events-none"></div>
 
           <div class="space-y-4 z-10">
+            <!-- Badge row -->
             <div class="flex items-center justify-between">
-              <span class="text-[9px] font-mono font-bold tracking-widest text-[#0EA5E9] uppercase">ARCHITECTURAL SYSTEM
-                SPEC</span>
-              <span
-                class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                <span class="w-1.5 h-1.5 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span>
-                SLA ONLINE
+              <span class="text-[9px] font-mono font-bold tracking-widest text-[#2563EB] uppercase">SYSTEM BLUEPRINT SPEC</span>
+              <span id="modal-sla-badge"
+                class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-medium transition-all duration-300">
+                <span class="w-1.5 h-1.5 rounded-full mr-1.5 animate-pulse bg-current"></span>
+                <span id="modal-status-text">SLA ACTIVE</span>
               </span>
             </div>
 
-            <div class="flex items-center space-x-3 mt-2">
-              <div
-                class="w-12 h-12 bg-blue-500/10 rounded-xl border border-blue-500/20 flex items-center justify-center text-blue-400 shadow-inner shrink-0">
+            <!-- Project Icon + Title -->
+            <div class="flex items-center space-x-3.5 mt-2">
+              <div id="modal-icon-container"
+                class="w-12 h-12 rounded-xl flex items-center justify-center shadow-xs shrink-0 transition-all duration-300">
                 <i id="modal-icon" data-lucide="cpu" class="w-6 h-6"></i>
               </div>
               <div class="min-w-0">
-                <h3 id="modal-title" class="text-lg font-bold text-white tracking-tight truncate">Project Title</h3>
-                <span id="modal-category" class="text-xs text-slate-400 font-mono block truncate">Retail
-                  Technology</span>
+                <h3 id="modal-title" class="text-lg font-extrabold text-slate-900 tracking-tight truncate">Project Title</h3>
+                <span id="modal-category" class="text-xs text-slate-500 font-medium block truncate">Category</span>
               </div>
             </div>
           </div>
 
           <!-- Mid visual flow (architecture placeholder) -->
           <div
-            class="my-6 p-4 rounded-2xl bg-slate-900/50 border border-slate-800/80 relative flex flex-col justify-between min-h-[180px] z-10">
-            <svg class="absolute inset-0 w-full h-full pointer-events-none opacity-25" viewBox="0 0 300 150">
-              <circle cx="50" cy="75" r="4" fill="#3B82F6" class="animate-pulse"></circle>
-              <circle cx="150" cy="40" r="4" fill="#0EA5E9" class="animate-pulse"></circle>
-              <circle cx="150" cy="110" r="4" fill="#0EA5E9" class="animate-pulse"></circle>
-              <circle cx="250" cy="75" r="4" fill="#10B981" class="animate-pulse"></circle>
-              <line x1="54" y1="75" x2="146" y2="40" stroke="#3B82F6" stroke-width="1.5" stroke-dasharray="4 4"
+            class="my-5 p-4 rounded-2xl bg-white/60 border border-slate-200/50 backdrop-blur-md relative flex flex-col justify-between min-h-[160px] z-10 shadow-xs">
+            <svg id="modal-visual-network" class="absolute inset-0 w-full h-full pointer-events-none opacity-[0.85]" viewBox="0 0 300 150">
+              <circle cx="50" cy="75" r="5" fill="#3B82F6" class="animate-pulse"></circle>
+              <circle cx="150" cy="40" r="5" fill="#10B981" class="animate-pulse"></circle>
+              <circle cx="150" cy="110" r="5" fill="#6366F1" class="animate-pulse"></circle>
+              <circle cx="250" cy="75" r="5" fill="#3B82F6" class="animate-pulse"></circle>
+              <line x1="55" y1="75" x2="145" y2="40" stroke="#3B82F6" stroke-width="1.5" stroke-dasharray="4 4"
                 class="dash-anim"></line>
-              <line x1="54" y1="75" x2="146" y2="110" stroke="#3B82F6" stroke-width="1.5" stroke-dasharray="4 4"
+              <line x1="55" y1="75" x2="145" y2="110" stroke="#3B82F6" stroke-width="1.5" stroke-dasharray="4 4"
                 class="dash-anim"></line>
-              <line x1="154" y1="40" x2="246" y2="75" stroke="#10B981" stroke-width="1.5" stroke-dasharray="4 4"
+              <line x1="155" y1="40" x2="245" y2="75" stroke="#10B981" stroke-width="1.5" stroke-dasharray="4 4"
                 class="dash-anim"></line>
-              <line x1="154" y1="110" x2="246" y2="75" stroke="#10B981" stroke-width="1.5" stroke-dasharray="4 4"
+              <line x1="155" y1="110" x2="245" y2="75" stroke="#6366F1" stroke-width="1.5" stroke-dasharray="4 4"
                 class="dash-anim"></line>
             </svg>
-            <div class="text-[9px] font-mono text-slate-500 uppercase tracking-widest">REALTIME NETWORK LOGS</div>
-            <div class="font-mono text-[10px] text-slate-400 space-y-1 mt-4 overflow-hidden h-24 select-none">
-              <div class="text-blue-400">&gt; Connecting gateway node... CONNECTED</div>
-              <div class="text-sky-400">&gt; Performing security audit... PASSED</div>
-              <div class="text-emerald-400">&gt; Evaluating telemetry SLA metrics... 100%</div>
-              <div class="text-slate-500">&gt; Streaming deployment telemetry logs... ACTIVE</div>
+            <div class="text-[9px] font-mono text-slate-400 uppercase tracking-widest">REALTIME NODE LOGS</div>
+            <div id="modal-logs-container" class="font-mono text-[9px] text-slate-500 space-y-1 mt-4 overflow-hidden h-20 select-none">
+              <!-- Dynamically populated logs -->
             </div>
             <div
-              class="flex justify-between items-center text-[10px] font-mono text-slate-500 border-t border-slate-800/80 pt-2 mt-2">
+              class="flex justify-between items-center text-[9px] font-mono text-slate-400 border-t border-slate-100 pt-2 mt-2">
               <span>PORT: 8080</span>
               <span>SLA: 99.99%</span>
             </div>
           </div>
 
-          <!-- Bottom telemetry metrics -->
-          <div class="grid grid-cols-2 gap-3 z-10">
-            <div class="bg-slate-900 border border-slate-800 p-3 rounded-xl">
-              <span class="text-[9px] font-mono text-slate-500 block uppercase">AUDIT COMPLIANCE</span>
-              <span class="text-xs font-bold text-emerald-400 block mt-1 inline-flex items-center">
-                <i data-lucide="check-circle" class="w-3.5 h-3.5 mr-1 text-emerald-400"></i>
-                SECURE
+          <!-- Bottom telemetry metrics grid -->
+          <div class="grid grid-cols-2 gap-3.5 z-10">
+            <!-- Metric 1: Performance -->
+            <div class="bg-white/60 border border-slate-200/80 p-3 rounded-xl shadow-xs">
+              <span class="text-[8px] font-bold font-mono text-slate-400 block uppercase tracking-wider">PERFORMANCE</span>
+              <span class="text-sm font-extrabold text-slate-800 block mt-0.5">
+                <span id="metric-val-performance">0</span>%
               </span>
+              <span id="metric-lbl-performance" class="text-[9px] text-slate-400 block mt-0.5 leading-tight truncate">Improvement</span>
             </div>
-            <div class="bg-slate-900 border border-slate-800 p-3 rounded-xl">
-              <span class="text-[9px] font-mono text-slate-500 block uppercase">PERFORMANCE KPI</span>
-              <span id="modal-kpi" class="text-xs font-bold text-sky-400 block mt-1">60% Improved</span>
+            <!-- Metric 2: Users -->
+            <div class="bg-white/60 border border-slate-200/80 p-3 rounded-xl shadow-xs">
+              <span class="text-[8px] font-bold font-mono text-slate-400 block uppercase tracking-wider">SCALABILITY</span>
+              <span class="text-sm font-extrabold text-slate-800 block mt-0.5">
+                <span id="metric-val-users">0</span><span id="metric-suff-users">+</span>
+              </span>
+              <span id="metric-lbl-users" class="text-[9px] text-slate-400 block mt-0.5 leading-tight truncate">Users Impacted</span>
+            </div>
+            <!-- Metric 3: Speed -->
+            <div class="bg-white/60 border border-slate-200/80 p-3 rounded-xl shadow-xs">
+              <span class="text-[8px] font-bold font-mono text-slate-400 block uppercase tracking-wider">LATENCY</span>
+              <span class="text-sm font-extrabold text-slate-800 block mt-0.5">
+                <span id="metric-val-speed">0</span><span id="metric-suff-speed">ms</span>
+              </span>
+              <span id="metric-lbl-speed" class="text-[9px] text-slate-400 block mt-0.5 leading-tight truncate">Processing Speed</span>
+            </div>
+            <!-- Metric 4: Cost -->
+            <div class="bg-white/60 border border-slate-200/80 p-3 rounded-xl shadow-xs">
+              <span class="text-[8px] font-bold font-mono text-slate-400 block uppercase tracking-wider">EFFICIENCY</span>
+              <span class="text-sm font-extrabold text-slate-800 block mt-0.5">
+                <span id="metric-val-cost">0</span>%
+              </span>
+              <span id="metric-lbl-cost" class="text-[9px] text-slate-400 block mt-0.5 leading-tight truncate">Cost Reduction</span>
             </div>
           </div>
         </div>
 
         <!-- Right specifications panel (tabs, details, tags) -->
         <div
-          class="w-full md:w-3/5 p-6 sm:p-8 flex flex-col justify-between overflow-y-auto max-h-[90vh] md:max-h-full">
-          <div class="flex items-start justify-between pb-4 border-b border-slate-800">
+          class="w-full md:w-[58%] p-6 sm:p-8 flex flex-col justify-between overflow-y-auto max-h-[90vh] md:max-h-full bg-slate-50/50">
+          <div class="flex items-start justify-between pb-4 border-b border-slate-200/80">
             <div>
-              <span class="text-[10px] font-mono font-bold tracking-widest text-[#2563EB] uppercase">CASE STUDY
-                PORTFOLIO</span>
-              <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight mt-1">System Overview & Spec</h2>
+              <span class="text-[10px] font-mono font-bold tracking-widest text-[#2563EB] uppercase">CASE STUDY PORTFOLIO</span>
+              <h2 class="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight mt-1">System Overview & Spec</h2>
             </div>
             <button onclick="closeProjectDashboard()"
-              class="text-slate-400 hover:text-white bg-slate-800 hover:bg-slate-700 p-2 rounded-xl transition-colors cursor-pointer"
+              class="text-slate-400 hover:text-slate-700 bg-slate-100 hover:bg-slate-200 p-2 rounded-xl transition-colors cursor-pointer"
               aria-label="Close modal">
               <i data-lucide="x" class="w-5 h-5"></i>
             </button>
@@ -891,48 +860,56 @@
           <!-- Scrollable details area -->
           <div class="mt-6 space-y-6 flex-grow">
             <!-- Tabs -->
-            <div class="flex space-x-2 border-b border-slate-800 pb-3 overflow-x-auto">
+            <div class="flex space-x-2 border-b border-slate-200/80 pb-3 overflow-x-auto">
               <button onclick="toggleModalTab('overview')" id="tab-btn-overview"
-                class="px-4 py-1.5 rounded-lg text-xs font-semibold bg-[#2563EB]/15 text-[#2563EB] border border-[#2563EB]/20 transition-all cursor-pointer whitespace-nowrap">
+                class="px-4 py-1.5 rounded-lg text-xs font-semibold bg-[#2563EB]/10 text-[#2563EB] border border-[#2563EB]/20 transition-all cursor-pointer whitespace-nowrap">
                 Overview
               </button>
               <button onclick="toggleModalTab('features')" id="tab-btn-features"
-                class="px-4 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-white border border-transparent transition-all cursor-pointer whitespace-nowrap">
-                System Features
+                class="px-4 py-1.5 rounded-lg text-xs font-semibold text-slate-500 hover:text-slate-800 border border-transparent transition-all cursor-pointer whitespace-nowrap">
+                Features
               </button>
-              <button onclick="toggleModalTab('impact')" id="tab-btn-impact"
-                class="px-4 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-white border border-transparent transition-all cursor-pointer whitespace-nowrap">
-                Business Impact
+              <button onclick="toggleModalTab('architecture')" id="tab-btn-architecture"
+                class="px-4 py-1.5 rounded-lg text-xs font-semibold text-slate-500 hover:text-slate-800 border border-transparent transition-all cursor-pointer whitespace-nowrap">
+                Architecture
+              </button>
+              <button onclick="toggleModalTab('results')" id="tab-btn-results"
+                class="px-4 py-1.5 rounded-lg text-xs font-semibold text-slate-500 hover:text-slate-800 border border-transparent transition-all cursor-pointer whitespace-nowrap">
+                Results
               </button>
             </div>
 
             <!-- Tab 1: Overview -->
             <div id="modal-tab-overview" class="space-y-4">
               <div class="space-y-2">
-                <h4 class="text-xs font-mono font-bold tracking-wider text-slate-500 uppercase">PROBLEM STATEMENT</h4>
-                <p id="modal-problem" class="text-slate-300 text-sm leading-relaxed">Problem statement details.</p>
+                <h4 class="text-xs font-mono font-bold tracking-wider text-slate-400 uppercase">PROBLEM STATEMENT</h4>
+                <p id="modal-problem" class="text-slate-600 text-sm leading-relaxed">Problem statement details.</p>
               </div>
               <div class="space-y-2">
-                <h4 class="text-xs font-mono font-bold tracking-wider text-slate-500 uppercase">PROPOSED SOLUTION</h4>
-                <p id="modal-solution" class="text-slate-300 text-sm leading-relaxed">Solution details.</p>
+                <h4 class="text-xs font-mono font-bold tracking-wider text-slate-400 uppercase">PROPOSED SOLUTION</h4>
+                <p id="modal-solution" class="text-slate-600 text-sm leading-relaxed">Solution details.</p>
               </div>
             </div>
 
             <!-- Tab 2: System Features -->
             <div id="modal-tab-features" class="hidden space-y-2">
-              <h4 class="text-xs font-mono font-bold tracking-wider text-slate-500 uppercase mb-3">KEY ARCHITECTURAL
-                FEATURES</h4>
+              <h4 class="text-xs font-mono font-bold tracking-wider text-slate-400 uppercase mb-3">KEY SYSTEM FEATURES</h4>
               <ul id="modal-features-list" class="space-y-2.5">
                 <!-- Dynamically populated features -->
               </ul>
             </div>
 
-            <!-- Tab 3: Business Impact -->
-            <div id="modal-tab-impact" class="hidden space-y-2">
-              <h4 class="text-xs font-mono font-bold tracking-wider text-slate-500 uppercase">BUSINESS IMPACT & SLA
-                METRICS</h4>
-              <div class="bg-slate-950/60 p-4 rounded-xl border border-slate-800 space-y-4">
-                <p id="modal-impact" class="text-slate-300 text-sm leading-relaxed">Impact explanation details.</p>
+            <!-- Tab 3: Technical Architecture -->
+            <div id="modal-tab-architecture" class="hidden space-y-2">
+              <h4 class="text-xs font-mono font-bold tracking-wider text-slate-400 uppercase mb-3">SYSTEM ARCHITECTURE SPEC</h4>
+              <p id="modal-architecture" class="text-slate-600 text-sm leading-relaxed">Architecture details.</p>
+            </div>
+
+            <!-- Tab 4: Business Results -->
+            <div id="modal-tab-results" class="hidden space-y-2">
+              <h4 class="text-xs font-mono font-bold tracking-wider text-slate-400 uppercase mb-3">BUSINESS IMPACT & SLA METRICS</h4>
+              <div class="bg-white p-4 rounded-xl border border-slate-200/80 space-y-4 shadow-xs">
+                <p id="modal-impact" class="text-slate-600 text-sm leading-relaxed">Impact explanation details.</p>
                 <div id="modal-metrics-pills" class="flex flex-wrap gap-2 pt-2">
                   <!-- Dynamically populated metrics -->
                 </div>
@@ -941,9 +918,8 @@
           </div>
 
           <!-- Footer tags -->
-          <div class="mt-8 pt-6 border-t border-slate-800 space-y-2.5">
-            <span class="text-[10px] font-mono font-bold text-slate-500 uppercase tracking-widest block">TECHNOLOGIES
-              IMPLEMENTED</span>
+          <div class="mt-8 pt-6 border-t border-slate-200/80 space-y-2.5">
+            <span class="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest block font-sans">TECHNOLOGIES IMPLEMENTED</span>
             <div id="modal-tech-tags" class="flex flex-wrap gap-1.5">
               <!-- Dynamically populated tags -->
             </div>
@@ -969,6 +945,17 @@
             "Sales analytics and reporting dashboard",
             "Multi-user role-based access control"
           ],
+          architecture: "Multi-tier MVC architecture utilizing Spring Boot REST APIs, Hibernate/JPA ORM patterns, and React component state hierarchies. Relational databases are heavily indexed for instant POS barcode lookup operations.",
+          detailedMetrics: {
+            performance: 60,
+            performanceLabel: "POS Billing Speed Up",
+            users: 1500,
+            usersLabel: "Daily Transactions",
+            speed: 120,
+            speedLabel: "POS Query Latency (ms)",
+            cost: 30,
+            costLabel: "Stock Inaccuracy Reduction"
+          },
           impact: "Reduced billing time by 60%, eliminated stock discrepancies, and increased revenue visibility for store owners through actionable sales insights.",
           tags: ["Java", "Spring Boot", "MySQL", "React", "HTML5", "CSS3"],
           icon: "shopping-bag",
@@ -990,6 +977,17 @@
             "Compliance reporting and audit trails",
             "Department-wise access and notifications"
           ],
+          architecture: "Centralized client-server topology using Spring Security for role-based permissions, transactional donor databases with atomic allocation procedures, and real-time WebSocket relays for emergency donation alerts.",
+          detailedMetrics: {
+            performance: 45,
+            performanceLabel: "Inventory Response Speed",
+            users: 2000,
+            usersLabel: "Student Donors Enrolled",
+            speed: 2,
+            speedLabel: "Alert Dispatch Delay (s)",
+            cost: 40,
+            costLabel: "Blood Wastage Reduction"
+          },
           impact: "Improved blood availability response time by 45% and ensured regulatory compliance with complete digital audit trails.",
           tags: ["Java", "Spring Boot", "MySQL", "JavaScript", "HTML5"],
           icon: "activity",
@@ -1011,6 +1009,17 @@
             "Video analytics and event logging",
             "Zone-based monitoring configuration"
           ],
+          architecture: "Deep learning analytics pipeline driven by OpenCV frames, asynchronous YOLOv8 object detection inference runs, and Redis streams distributing real-time intrusion flags to a React frontend.",
+          detailedMetrics: {
+            performance: 99,
+            performanceLabel: "Object Detection Accuracy",
+            users: 120,
+            usersLabel: "Active Video Feeds",
+            speed: 85,
+            speedLabel: "Inference Latency (ms)",
+            cost: 70,
+            costLabel: "Security Monitoring Savings"
+          },
           impact: "Reduced security monitoring costs by 70% while improving incident detection accuracy and response time across facilities.",
           tags: ["Machine Learning", "AI Systems", "Python", "React", "Java"],
           icon: "eye",
@@ -1032,6 +1041,17 @@
             "Security incident dashboard and reporting",
             "Threat intelligence integration"
           ],
+          architecture: "Intelligent network defense engine built with Java PCAP capture libraries, custom ML isolation algorithms, and automated kernel-level firewalld routing table hooks.",
+          detailedMetrics: {
+            performance: 95,
+            performanceLabel: "Attempted Intrusions Blocked",
+            users: 5,
+            usersLabel: "Million Network Packets/Day",
+            speed: 4,
+            speedLabel: "Analysis Latency (ms)",
+            cost: 50,
+            costLabel: "Incident Recovery Speedup"
+          },
           impact: "Detected and prevented 95% of attempted intrusions, significantly reducing security incident response time and protecting critical infrastructure.",
           tags: ["Machine Learning", "Cybersecurity Solutions", "Java", "Spring Boot"],
           icon: "shield-alert",
@@ -1053,6 +1073,17 @@
             "Central command and control dashboard",
             "Geofencing and alert management"
           ],
+          architecture: "Distributed edge IoT aerial vehicles running custom flight path planners, communicating telemetry data over high-frequency MQTT channels, linked to target coordinate vision modules.",
+          detailedMetrics: {
+            performance: 300,
+            performanceLabel: "Surveillance Coverage Gain",
+            users: 4,
+            usersLabel: "Autonomous Flight Units",
+            speed: 450,
+            speedLabel: "Video Frame Process (ms)",
+            cost: 40,
+            costLabel: "Human Patrol Cost Savings"
+          },
           impact: "Expanded surveillance coverage by 300% at 40% lower cost compared to fixed camera infrastructure for large perimeter areas.",
           tags: ["AI Systems", "IoT", "Smart Systems", "React"],
           icon: "plane",
@@ -1074,6 +1105,17 @@
             "Revenue analytics and reporting",
             "Integration with payment gateways"
           ],
+          architecture: "Hardware sensor arrays reporting occupancy states via LoRaWAN gate nodes, coordinated through transactional databases with lock safety, and displayed on a React Native client app.",
+          detailedMetrics: {
+            performance: 35,
+            performanceLabel: "Parking Lot Occupancy Gain",
+            users: 800,
+            usersLabel: "Daily Registered Vehicles",
+            speed: 1,
+            speedLabel: "Sensor Grid Latency (s)",
+            cost: 100,
+            costLabel: "Automated Billing Accuracy"
+          },
           impact: "Increased parking revenue by 35% through optimized space utilization and eliminated manual billing overhead entirely.",
           tags: ["IoT", "Smart Systems", "Java", "MySQL", "React"],
           icon: "cpu",
@@ -1095,6 +1137,17 @@
             "Centralized IoT security dashboard",
             "Compliance reporting for IoT deployments"
           ],
+          architecture: "Secure MQTT Broker Gateways running lightweight TensorFlow Lite classifiers to inspect communication behaviors, triggering automated firewall container isolation rules on threat indicators.",
+          detailedMetrics: {
+            performance: 500,
+            performanceLabel: "Protected Smart Devices",
+            users: 12,
+            usersLabel: "Monitored Node Clusters",
+            speed: 8,
+            speedLabel: "Quarantine Analysis Time (ms)",
+            cost: 100,
+            costLabel: "Successful Attack Block Rate"
+          },
           impact: "Protected 500+ IoT devices across deployments, preventing unauthorized access and ensuring continuous operation of critical smart infrastructure.",
           tags: ["IoT", "Cybersecurity Solutions", "Machine Learning", "Java", "AWS"],
           icon: "wifi",
@@ -1113,8 +1166,8 @@
         document.getElementById('modal-category').textContent = project.category;
         document.getElementById('modal-problem').textContent = project.problem;
         document.getElementById('modal-solution').textContent = project.solution;
+        document.getElementById('modal-architecture').textContent = project.architecture;
         document.getElementById('modal-impact').textContent = project.impact;
-        document.getElementById('modal-kpi').textContent = project.kpi + " Improved";
 
         // Populate icon
         const iconContainer = document.getElementById('modal-icon');
@@ -1125,7 +1178,7 @@
         featuresList.innerHTML = '';
         project.features.forEach(feat => {
           const li = document.createElement('li');
-          li.className = 'flex items-start text-slate-300 text-sm space-x-2';
+          li.className = 'flex items-start text-slate-600 text-sm space-x-2';
           li.innerHTML = `
             <i data-lucide="check" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
             <span>${feat}</span>
@@ -1138,7 +1191,7 @@
         metricsPills.innerHTML = '';
         project.metrics.forEach(metric => {
           const span = document.createElement('span');
-          span.className = 'bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold font-mono px-3 py-1 rounded-lg';
+          span.className = 'bg-blue-50 border border-blue-100 text-blue-600 text-xs font-semibold px-3 py-1 rounded-lg';
           span.textContent = metric;
           metricsPills.appendChild(span);
         });
@@ -1148,9 +1201,105 @@
         techTags.innerHTML = '';
         project.tags.forEach(tag => {
           const span = document.createElement('span');
-          span.className = 'bg-slate-800 border border-slate-700/60 text-slate-300 font-mono text-[10px] px-2.5 py-1 rounded-md font-semibold';
+          span.className = 'bg-slate-100/80 border border-slate-200 text-slate-600 font-mono text-[10px] px-2.5 py-1 rounded-md font-semibold';
           span.textContent = tag;
           techTags.appendChild(span);
+        });
+
+        // Dynamic project-specific visual theme settings
+        const leftPanel = document.getElementById('modal-left-panel');
+        const iconBox = document.getElementById('modal-icon-container');
+        const slaBadge = document.getElementById('modal-sla-badge');
+        const statusText = document.getElementById('modal-status-text');
+
+        // Reset default classes
+        leftPanel.className = "w-full md:w-[42%] border-r border-slate-200/80 p-6 flex flex-col justify-between relative overflow-hidden shrink-0 transition-all duration-500";
+        iconBox.className = "w-12 h-12 rounded-xl flex items-center justify-center shadow-xs shrink-0 transition-all duration-300";
+        slaBadge.className = "inline-flex items-center px-2 py-0.5 rounded text-[10px] font-medium transition-all duration-300";
+
+        const colorMap = {
+          "kirana-management": { primary: "#10B981", accent: "#3B82F6" },
+          "blood-bank-college": { primary: "#EF4444", accent: "#3B82F6" },
+          "ai-cctv": { primary: "#8B5CF6", accent: "#3B82F6" },
+          "ai-threat-detection": { primary: "#3B82F6", accent: "#06B6D4" },
+          "drone-security": { primary: "#6366F1", accent: "#3B82F6" },
+          "smart-parking": { primary: "#14B8A6", accent: "#3B82F6" },
+          "iot-cyber-detection": { primary: "#0EA5E9", accent: "#3B82F6" }
+        };
+
+        const projColors = colorMap[project.id] || { primary: "#3B82F6", accent: "#10B981" };
+
+        if (project.id === 'kirana-management') {
+          leftPanel.classList.add('from-emerald-50/60', 'via-blue-50/30', 'to-slate-50/60', 'bg-gradient-to-br');
+          iconBox.classList.add('bg-emerald-50', 'border-emerald-200', 'text-emerald-600');
+          slaBadge.classList.add('bg-emerald-50', 'border', 'border-emerald-150', 'text-emerald-700');
+          statusText.textContent = "POS SYSTEM ACTIVE";
+        } else if (project.id === 'blood-bank-college') {
+          leftPanel.classList.add('from-red-50/60', 'via-blue-50/30', 'to-slate-50/60', 'bg-gradient-to-br');
+          iconBox.classList.add('bg-red-50', 'border-red-200', 'text-red-600');
+          slaBadge.classList.add('bg-red-50', 'border', 'border-red-150', 'text-red-700');
+          statusText.textContent = "REGULATORY COMPLIANT";
+        } else if (project.id === 'ai-cctv') {
+          leftPanel.classList.add('from-purple-50/60', 'via-blue-50/30', 'to-slate-50/60', 'bg-gradient-to-br');
+          iconBox.classList.add('bg-purple-50', 'border-purple-200', 'text-purple-600');
+          slaBadge.classList.add('bg-purple-50', 'border', 'border-purple-150', 'text-purple-700');
+          statusText.textContent = "AI FEED LIVE";
+        } else if (project.id === 'ai-threat-detection') {
+          leftPanel.classList.add('from-blue-50/60', 'via-cyan-50/30', 'to-slate-50/60', 'bg-gradient-to-br');
+          iconBox.classList.add('bg-blue-50', 'border-blue-200', 'text-blue-600');
+          slaBadge.classList.add('bg-blue-50', 'border', 'border-blue-150', 'text-blue-700');
+          statusText.textContent = "FIREWALL ONLINE";
+        } else if (project.id === 'drone-security') {
+          leftPanel.classList.add('from-indigo-50/60', 'via-slate-50/30', 'to-slate-50/60', 'bg-gradient-to-br');
+          iconBox.classList.add('bg-indigo-50', 'border-indigo-200', 'text-indigo-600');
+          slaBadge.classList.add('bg-indigo-50', 'border', 'border-indigo-150', 'text-indigo-700');
+          statusText.textContent = "PATROL UNIT ACTIVE";
+        } else if (project.id === 'smart-parking') {
+          leftPanel.classList.add('from-teal-50/60', 'via-blue-50/30', 'to-slate-50/60', 'bg-gradient-to-br');
+          iconBox.classList.add('bg-teal-50', 'border-teal-200', 'text-teal-600');
+          slaBadge.classList.add('bg-teal-50', 'border', 'border-teal-150', 'text-teal-700');
+          statusText.textContent = "SENSORS CONNECTED";
+        } else if (project.id === 'iot-cyber-detection') {
+          leftPanel.classList.add('from-sky-50/60', 'via-blue-50/30', 'to-slate-50/60', 'bg-gradient-to-br');
+          iconBox.classList.add('bg-sky-50', 'border-sky-200', 'text-sky-600');
+          slaBadge.classList.add('bg-sky-50', 'border', 'border-sky-150', 'text-sky-700');
+          statusText.textContent = "NODES QUARANTINED";
+        }
+
+        // Dynamically color visual network SVG
+        const circles = document.querySelectorAll('#modal-visual-network circle');
+        const lines = document.querySelectorAll('#modal-visual-network line');
+        if (circles.length >= 4) {
+          circles[0].setAttribute('fill', projColors.accent);
+          circles[1].setAttribute('fill', projColors.primary);
+          circles[2].setAttribute('fill', projColors.accent);
+          circles[3].setAttribute('fill', projColors.primary);
+        }
+        if (lines.length >= 4) {
+          lines[0].setAttribute('stroke', projColors.accent);
+          lines[1].setAttribute('stroke', projColors.accent);
+          lines[2].setAttribute('stroke', projColors.primary);
+          lines[3].setAttribute('stroke', projColors.primary);
+        }
+
+        // Realtime typing logs animation
+        const logsContainer = document.getElementById('modal-logs-container');
+        logsContainer.innerHTML = '';
+        const logLines = [
+          `> Initializing gateway node for ${project.title}...`,
+          `> Resolving component dependencies... SUCCESS`,
+          `> Evaluating telemetry KPI metrics... OK`,
+          `> Stream telemetry SLA feed: ACTIVE`
+        ];
+        logLines.forEach((line, index) => {
+          setTimeout(() => {
+            const div = document.createElement('div');
+            if (line.includes('SUCCESS') || line.includes('OK')) div.className = 'text-emerald-600 font-bold';
+            else if (line.includes('Initializing')) div.className = 'text-blue-600';
+            else div.className = 'text-slate-400';
+            div.textContent = line;
+            logsContainer.appendChild(div);
+          }, index * 200);
         });
 
         // Re-create lucide icons in the modal
@@ -1176,8 +1325,48 @@
         // Default to overview tab
         toggleModalTab('overview');
 
+        // Run metrics counter animations
+        animateCounter('metric-val-performance', project.detailedMetrics.performance);
+        animateCounter('metric-val-users', project.detailedMetrics.users);
+        animateCounter('metric-val-speed', project.detailedMetrics.speed);
+        animateCounter('metric-val-cost', project.detailedMetrics.cost);
+
+        document.getElementById('metric-lbl-performance').textContent = project.detailedMetrics.performanceLabel;
+        document.getElementById('metric-lbl-users').textContent = project.detailedMetrics.usersLabel;
+        document.getElementById('metric-lbl-speed').textContent = project.detailedMetrics.speedLabel;
+        document.getElementById('metric-lbl-cost').textContent = project.detailedMetrics.costLabel;
+
+        // Custom suffix management
+        document.getElementById('metric-suff-users').textContent = project.id.includes('parking') ? '' : (project.id.includes('cctv') ? '' : '+');
+        document.getElementById('metric-suff-speed').textContent = project.id.includes('college') ? 's' : (project.id.includes('parking') ? 's' : 'ms');
+
         // Disable body scroll
         document.body.style.overflow = 'hidden';
+      }
+
+      function animateCounter(elementId, targetVal) {
+        const el = document.getElementById(elementId);
+        if (!el) return;
+        let start = 0;
+        const duration = 800; // ms
+        const startTime = performance.now();
+
+        function update(currentTime) {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          // Ease out quad
+          const easeProgress = progress * (2 - progress);
+          const currentVal = Math.floor(easeProgress * targetVal);
+          
+          el.textContent = currentVal.toLocaleString();
+
+          if (progress < 1) {
+            requestAnimationFrame(update);
+          } else {
+            el.textContent = targetVal.toLocaleString();
+          }
+        }
+        requestAnimationFrame(update);
       }
 
       function closeProjectDashboard() {
@@ -1197,15 +1386,15 @@
       }
 
       function toggleModalTab(tabId) {
-        const tabs = ['overview', 'features', 'impact'];
+        const tabs = ['overview', 'features', 'architecture', 'results'];
         tabs.forEach(t => {
           const btn = document.getElementById('tab-btn-' + t);
           const tabContent = document.getElementById('modal-tab-' + t);
           if (t === tabId) {
-            btn.className = 'px-4 py-1.5 rounded-lg text-xs font-semibold bg-[#2563EB]/15 text-[#2563EB] border border-[#2563EB]/20 transition-all cursor-pointer whitespace-nowrap';
+            btn.className = 'px-4 py-1.5 rounded-lg text-xs font-semibold bg-[#2563EB]/10 text-[#2563EB] border border-[#2563EB]/20 transition-all cursor-pointer whitespace-nowrap';
             tabContent.classList.remove('hidden');
           } else {
-            btn.className = 'px-4 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-white border border-transparent transition-all cursor-pointer whitespace-nowrap';
+            btn.className = 'px-4 py-1.5 rounded-lg text-xs font-semibold text-slate-500 hover:text-slate-800 border border-transparent transition-all cursor-pointer whitespace-nowrap';
             tabContent.classList.add('hidden');
           }
         });
