@@ -64,3 +64,22 @@
   --z-overlay: 1100;
   --z-modal: 1200;
 }
+
+/* =============================================
+   Dark Mode — CSS Variable Overrides
+   Flip bg/text/border tokens; primary stays.
+   ============================================= */
+[data-theme="dark"] {
+  --color-bg:           #0F172A;
+  --color-bg-light:     #1E293B;
+  --color-bg-muted:     #1E293B;
+  --color-text:         #F1F5F9;
+  --color-text-muted:   #94A3B8;
+  --color-text-light:   #64748B;
+  --color-border:       #334155;
+  --color-border-light: #1E293B;
+  --shadow-sm:  0 1px 3px 0 rgb(0 0 0 / 0.4);
+  --shadow-md:  0 4px 6px -1px rgb(0 0 0 / 0.5), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+  --shadow-lg:  0 10px 15px -3px rgb(0 0 0 / 0.6), 0 4px 6px -4px rgb(0 0 0 / 0.4);
+  --shadow-xl:  0 20px 25px -5px rgb(0 0 0 / 0.6), 0 8px 10px -6px rgb(0 0 0 / 0.4);
+}

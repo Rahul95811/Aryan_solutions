@@ -6,11 +6,14 @@
 (function () {
   'use strict';
 
-  /* ---------- Header Scroll Effect ---------- */
+  /* ---------- Header & Floating CTA Scroll Effect ---------- */
   const header = document.querySelector('.header');
-  if (header) {
+  const floatingCta = document.getElementById('floatingCta');
+  if (header || floatingCta) {
     const onScroll = () => {
-      header.classList.toggle('header--scrolled', window.scrollY > 10);
+      const scrolled = window.scrollY > 10;
+      if (header) header.classList.toggle('header--scrolled', scrolled);
+      if (floatingCta) floatingCta.classList.toggle('is-visible', window.scrollY > 300);
     };
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
@@ -61,10 +64,15 @@
           }
         });
       },
-      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+      { threshold: 0.08, rootMargin: '0px 0px 0px 0px' }
     );
 
     animatedElements.forEach((el) => observer.observe(el));
+
+    // Safety fallback: ensure no element stays invisible after 2 seconds
+    setTimeout(() => {
+      animatedElements.forEach((el) => el.classList.add('is-visible'));
+    }, 2000);
   } else {
     animatedElements.forEach((el) => el.classList.add('is-visible'));
   }
@@ -85,8 +93,13 @@
         const eased = 1 - Math.pow(1 - progress, 3);
         const current = Math.floor(eased * target);
         el.textContent = prefix + current.toLocaleString() + suffix;
-        if (progress < 1) requestAnimationFrame(step);
-        else el.textContent = prefix + target.toLocaleString() + suffix;
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        } else {
+          el.textContent = prefix + target.toLocaleString() + suffix;
+          const wrapper = el.closest('.stat-pulse-wrapper');
+          if (wrapper) wrapper.classList.add('stat-pulse');
+        }
       };
 
       requestAnimationFrame(step);
@@ -107,18 +120,35 @@
     counters.forEach((counter) => counterObserver.observe(counter));
   }
 
-  /* ---------- Form Validation ---------- */
+  /* ---------- Parallax Mousemove Effect ---------- */
+  document.addEventListener('mousemove', (e) => {
+    const x = (e.clientX - window.innerWidth / 2) / 50;
+    const y = (e.clientY - window.innerHeight / 2) / 50;
+
+    document.querySelectorAll('.shield-container').forEach(el => {
+      el.style.transform = `rotateX(${-y}deg) rotateY(${x}deg) scale3d(1, 1, 1)`;
+    });
+
+    document.querySelectorAll('.floating-node').forEach(el => {
+      const speed = el.classList.contains('node-1') ? 2 : el.classList.contains('node-2') ? -1.5 : 1;
+      el.style.transform = `translate3d(${x * speed}px, ${y * speed}px, 0)`;
+    });
+  });
+
+  /* ---------- Form Validation & Async Submit ---------- */
   const forms = document.querySelectorAll('[data-validate-form]');
 
   forms.forEach((form) => {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
+
+      // Clear all previous errors and invalid states
+      form.querySelectorAll('.form-error').forEach((el) => el.remove());
+      form.querySelectorAll('[aria-invalid]').forEach((el) => el.removeAttribute('aria-invalid'));
+
       let valid = true;
 
       form.querySelectorAll('[required]').forEach((field) => {
-        const errorEl = field.parentElement.querySelector('.form-error');
-        if (errorEl) errorEl.remove();
-
         if (!field.value.trim()) {
           valid = false;
           showError(field, 'This field is required.');
@@ -131,13 +161,63 @@
         }
       });
 
-      if (valid) {
-        const successEl = form.querySelector('.form-success');
-        if (successEl) {
-          successEl.hidden = false;
-          form.reset();
-          setTimeout(() => { successEl.hidden = true; }, 5000);
+      if (!valid) return;
+
+      // --- UI: enter loading state ---
+      const submitBtn = form.querySelector('[type="submit"]');
+      const btnText = submitBtn && submitBtn.querySelector('.btn__text');
+      const btnSpinner = submitBtn && submitBtn.querySelector('.btn__spinner');
+      const originalBtnText = btnText ? btnText.textContent : '';
+
+      if (submitBtn) submitBtn.disabled = true;
+      if (btnText) btnText.textContent = 'Sending\u2026';
+      if (btnSpinner) btnSpinner.hidden = false;
+
+      const successEl = form.querySelector('.form-success');
+      const formspreeId = form.getAttribute('data-formspree-id');
+
+      try {
+        if (formspreeId && formspreeId !== 'YOUR_FORM_ID') {
+          // Send to Formspree
+          const response = await fetch('https://formspree.io/f/' + formspreeId, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' },
+          });
+          if (!response.ok) {
+            const body = await response.json().catch(() => ({}));
+            throw new Error(body.error || 'Server error');
+          }
         }
+        // --- Success ---
+        if (successEl) {
+          successEl.style.cssText = '';
+          successEl.hidden = false;
+          successEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+        form.reset();
+        setTimeout(() => { if (successEl) successEl.hidden = true; }, 6000);
+
+      } catch (err) {
+        // --- Error: graceful fallback ---
+        if (successEl) {
+          const originalMsg = successEl.textContent;
+          successEl.textContent = 'Something went wrong. Please email us directly at contact@aryansoftware.com';
+          successEl.style.background = 'rgb(239 68 68 / 0.08)';
+          successEl.style.borderColor = 'rgb(239 68 68 / 0.2)';
+          successEl.style.color = '#EF4444';
+          successEl.hidden = false;
+          setTimeout(() => {
+            successEl.hidden = true;
+            successEl.textContent = originalMsg;
+            successEl.style.cssText = '';
+          }, 6000);
+        }
+      } finally {
+        // --- Restore button ---
+        if (submitBtn) submitBtn.disabled = false;
+        if (btnText) btnText.textContent = originalBtnText;
+        if (btnSpinner) btnSpinner.hidden = true;
       }
     });
   });
@@ -167,11 +247,11 @@
   function initHeroSlider() {
     // Support both old card class and new showcase class
     const card = document.querySelector('.hero-showcase-container') ||
-                 document.querySelector('.hero-slider-card');
+      document.querySelector('.hero-slider-card');
     if (!card) return;
 
     const slides = card.querySelectorAll('.hero-showcase__slide, .hero-slider__slide');
-    const dots   = card.querySelectorAll('.showcase-dot, .hero-slider__dot');
+    const dots = card.querySelectorAll('.showcase-dot, .hero-slider__dot');
     const progressBar = card.querySelector('.showcase-progress-bar, .hero-slider__progress-bar');
     if (!slides.length) return;
 
@@ -263,6 +343,39 @@
 
   // Initialize the slider
   initHeroSlider();
+
+  /* ---------- Theme Toggle ---------- */
+  (function initThemeToggle() {
+    const root = document.documentElement;
+    const toggles = document.querySelectorAll('.theme-toggle');
+    if (!toggles.length) return;
+
+    const applyTheme = (theme) => {
+      if (theme === 'dark') {
+        root.setAttribute('data-theme', 'dark');
+      } else {
+        root.removeAttribute('data-theme');
+      }
+      try { localStorage.setItem('theme', theme); } catch (e) { }
+    };
+
+    toggles.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const isDark = root.getAttribute('data-theme') === 'dark';
+        applyTheme(isDark ? 'light' : 'dark');
+      });
+    });
+  })();
+
+  /* ---------- Marquee Cloner ---------- */
+  document.querySelectorAll('.marquee-track').forEach((track) => {
+    const content = track.querySelector('.marquee-content');
+    if (content) {
+      const clone = content.cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true');
+      track.appendChild(clone);
+    }
+  });
 
 })();
 

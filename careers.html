@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -17,10 +17,14 @@
   <meta name="twitter:card" content="summary_large_image">
   <title>Careers | Aryan Software Solutions</title>
   <link rel="icon" type="image/png" href="logo-v4.png">
+  <link rel="apple-touch-icon" href="logo-v4.png">
+  <meta name="theme-color" content="#2563EB">
+  <link rel="manifest" href="manifest.json">
+  <script>localStorage.removeItem('theme');document.documentElement.removeAttribute('data-theme');</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/main.css?v=3">
+  <link rel="stylesheet" href="assets/css/main.css?v=17">
 </head>
 
 <body>
@@ -248,9 +252,8 @@
             <p>Submit your application and our HR team will review your profile within 5 business days.</p>
           </div>
           <div class="contact-form-card animate-on-scroll" data-delay="1">
-            <div class="form-success" hidden role="status">Thank you for your application! We will review your profile
-              and get back to you soon.</div>
-            <form data-validate-form novalidate>
+            <form data-validate-form novalidate data-formspree-id="xpqvqqww">
+              <div class="form-success" hidden role="status">Thank you for your application! We will review your profile and get back to you soon.</div>
               <div class="form-row">
                 <div class="form-group"><label for="apply-name" class="form-label">Full Name *</label><input type="text"
                     id="apply-name" name="name" class="form-input" required autocomplete="name"></div>
@@ -278,7 +281,10 @@
                   id="apply-message" name="message" class="form-textarea" required
                   placeholder="Tell us about yourself and why you'd like to join Aryan Software Solutions."></textarea>
               </div>
-              <button type="submit" class="btn btn--primary btn--lg" style="width: 100%;">Submit Application</button>
+              <button type="submit" class="btn btn--primary btn--lg" style="width: 100%;" id="careers-submit-btn">
+                <span class="btn__text">Submit Application</span>
+                <span class="btn__spinner" hidden aria-hidden="true" style="display:inline-block;margin-left:0.4rem;letter-spacing:0.2em;">&#8230;</span>
+              </button>
             </form>
           </div>
         </div>

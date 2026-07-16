@@ -30,10 +30,15 @@
 
   <title>Aryan Software Solutions | Innovate. Develop. Secure.</title>
   <link rel="icon" type="image/png" href="logo-v4.png">
+  <link rel="apple-touch-icon" href="logo-v4.png">
+  <meta name="theme-color" content="#2563EB">
+  <link rel="manifest" href="manifest.json">
+  <script>localStorage.removeItem('theme');document.documentElement.removeAttribute('data-theme');</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/main.css?v=3">
+  <link rel="stylesheet" href="assets/css/main.css?v=17">
+  <link rel="stylesheet" href="assets/css/premium.css">
 
   <script type="application/ld+json">
   {
@@ -68,6 +73,7 @@
       </a>
 
       <div class="header__actions">
+
         <a href="contact.html" class="btn btn--primary">Get Started</a>
         <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-nav">
           <span class="nav-toggle__bar"></span>
@@ -106,355 +112,60 @@
               Empowering organizations through Artificial Intelligence, Cybersecurity, IoT, Cloud Computing, and Custom
               Software Development.
             </p>
+
           </div>
 
           <!-- Right side -->
           <div class="hero__right animate-on-scroll" data-delay="3">
-            <div class="hero-showcase-container autoplay-running">
-              
-              <div class="hero-showcase__visuals">
-                <!-- Slide 1: Software Development -->
-                <div class="hero-showcase__slide active" data-index="0">
-                  <div class="hero-showcase__bg bg-software">
-                    <div class="code-line line-1"></div>
-                    <div class="code-line line-2"></div>
-                    <div class="code-line line-3"></div>
-                    <div class="code-block block-1"></div>
-                    <div class="code-block block-2"></div>
-                  </div>
-                  <div class="hero-showcase__graphic">
-                    <svg class="showcase-svg svg-software" viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <!-- Laptop Frame -->
-                      <rect x="30" y="30" width="140" height="90" rx="8" fill="url(#softwareGrad)" stroke="var(--color-primary)" stroke-width="2"/>
-                      <rect x="35" y="35" width="130" height="80" rx="4" fill="#0F172A"/>
-                      <path d="M15 125h170v4a6 6 0 01-6 6H21a6 6 0 01-6-6v-4z" fill="#64748B"/>
-                      <!-- Keyboard trackpad detail -->
-                      <rect x="85" y="128" width="30" height="4" rx="2" fill="#475569"/>
-                      <!-- Floating Brackets and Code Blocks inside IDE -->
-                      <g class="svg-code-group">
-                        <rect class="svg-line-1" x="45" y="45" width="35" height="6" rx="3" fill="#3B82F6"/>
-                        <rect class="svg-line-2" x="45" y="55" width="65" height="6" rx="3" fill="#10B981"/>
-                        <rect class="svg-line-3" x="55" y="65" width="50" height="6" rx="3" fill="#6366F1"/>
-                        <rect class="svg-line-4" x="45" y="75" width="40" height="6" rx="3" fill="#0EA5E9"/>
-                        <rect class="svg-line-5" x="45" y="85" width="55" height="6" rx="3" fill="#F59E0B"/>
-                        <rect class="svg-line-6" x="55" y="95" width="70" height="6" rx="3" fill="#3B82F6"/>
-                      </g>
-                      <!-- Floating coding curly braces outside laptop -->
-                      <text class="floating-char char-1" x="15" y="50" fill="var(--color-primary-light)" font-family="monospace" font-size="24">{</text>
-                      <text class="floating-char char-2" x="175" y="100" fill="var(--color-accent)" font-family="monospace" font-size="24">}</text>
-                      <defs>
-                        <linearGradient id="softwareGrad" x1="30" y1="30" x2="170" y2="120" gradientUnits="userSpaceOnUse">
-                          <stop stop-color="#E2E8F0"/>
-                          <stop offset="1" stop-color="#94A3B8"/>
-                        </linearGradient>
-                      </defs>
-                    </svg>
-                  </div>
+            <div class="hero-premium-shield">
+              <!-- 3D Cybersecurity Shield Container -->
+              <div class="shield-container">
+                <div class="shield-core">
+                  <svg viewBox="0 0 200 220" fill="none" xmlns="http://www.w3.org/2000/svg" class="shield-svg">
+                    <path d="M100 10C100 10 30 30 30 70C30 130 100 210 100 210C100 210 170 130 170 70C170 30 100 10 100 10Z" 
+                          fill="url(#shield-grad)" 
+                          stroke="url(#shield-border-grad)" 
+                          stroke-width="3" 
+                          filter="url(#glow)"/>
+                    <path d="M100 25C100 25 45 40 45 75C45 120 100 185 100 185C100 185 155 120 155 75C155 40 100 25 100 25Z" 
+                          fill="rgba(255,255,255,0.05)" 
+                          stroke="rgba(255,255,255,0.2)" 
+                          stroke-width="1"/>
+                    <!-- Inner lock/chip -->
+                    <rect x="85" y="80" width="30" height="25" rx="4" fill="var(--color-primary-light)" opacity="0.9"/>
+                    <path d="M90 80V70C90 64 94.5 60 100 60C105.5 60 110 64 110 70V80" stroke="var(--color-primary-light)" stroke-width="4" stroke-linecap="round"/>
+                    <defs>
+                      <linearGradient id="shield-grad" x1="100" y1="10" x2="100" y2="210" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="rgba(37,99,235,0.4)" />
+                        <stop offset="100%" stop-color="rgba(15,23,42,0.8)" />
+                      </linearGradient>
+                      <linearGradient id="shield-border-grad" x1="30" y1="10" x2="170" y2="210">
+                        <stop offset="0%" stop-color="#3b82f6" />
+                        <stop offset="50%" stop-color="#60a5fa" />
+                        <stop offset="100%" stop-color="#1e3a8a" />
+                      </linearGradient>
+                      <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                        <feGaussianBlur stdDeviation="8" result="blur" />
+                        <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                      </filter>
+                    </defs>
+                  </svg>
                 </div>
-
-                <!-- Slide 2: Artificial Intelligence -->
-                <div class="hero-showcase__slide" data-index="1">
-                  <div class="hero-showcase__bg bg-ai">
-                    <div class="particle p-1"></div>
-                    <div class="particle p-2"></div>
-                    <div class="particle p-3"></div>
-                  </div>
-                  <div class="hero-showcase__graphic">
-                    <svg class="showcase-svg svg-ai" viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <!-- Neural Network core -->
-                      <circle class="core-pulse" cx="100" cy="75" r="18" fill="url(#aiPulseGrad)" opacity="0.3"/>
-                      <circle class="core-node" cx="100" cy="75" r="10" fill="var(--color-primary)"/>
-                      
-                      <!-- Peripheral nodes -->
-                      <circle class="node" cx="50" cy="45" r="6" fill="var(--color-accent)"/>
-                      <circle class="node" cx="150" cy="45" r="6" fill="var(--color-accent)"/>
-                      <circle class="node" cx="60" cy="110" r="6" fill="var(--color-accent)"/>
-                      <circle class="node" cx="140" cy="110" r="6" fill="var(--color-accent)"/>
-                      
-                      <!-- Connection Lines -->
-                      <line class="net-line" x1="100" y1="75" x2="50" y2="45" stroke="var(--color-primary-light)" stroke-width="1.5" stroke-dasharray="4 2"/>
-                      <line class="net-line" x1="100" y1="75" x2="150" y2="45" stroke="var(--color-primary-light)" stroke-width="1.5" stroke-dasharray="4 2"/>
-                      <line class="net-line" x1="100" y1="75" x2="60" y2="110" stroke="var(--color-primary-light)" stroke-width="1.5" stroke-dasharray="4 2"/>
-                      <line class="net-line" x1="100" y1="75" x2="140" y2="110" stroke="var(--color-primary-light)" stroke-width="1.5" stroke-dasharray="4 2"/>
-                      <line class="net-line" x1="50" y1="45" x2="150" y2="45" stroke="var(--color-accent)" stroke-width="1" opacity="0.5"/>
-                      <line class="net-line" x1="60" y1="110" x2="140" y2="110" stroke="var(--color-accent)" stroke-width="1" opacity="0.5"/>
-
-                      <!-- Pulsating signal indicators traveling along paths -->
-                      <circle class="signal-dot dot-1" r="3" fill="#10B981"/>
-                      <circle class="signal-dot dot-2" r="3" fill="#10B981"/>
-                      <circle class="signal-dot dot-3" r="3" fill="#10B981"/>
-                      <circle class="signal-dot dot-4" r="3" fill="#10B981"/>
-
-                      <defs>
-                        <radialGradient id="aiPulseGrad" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" transform="translate(100 75) rotate(90) scale(18)">
-                          <stop stop-color="#2563EB"/>
-                          <stop offset="1" stop-color="#2563EB" stop-opacity="0"/>
-                        </radialGradient>
-                      </defs>
-                    </svg>
-                  </div>
-                </div>
-
-                <!-- Slide 3: Cybersecurity -->
-                <div class="hero-showcase__slide" data-index="2">
-                  <div class="hero-showcase__bg bg-cyber">
-                    <div class="cyber-grid"></div>
-                    <div class="pulse-ring pr-1"></div>
-                    <div class="pulse-ring pr-2"></div>
-                  </div>
-                  <div class="hero-showcase__graphic">
-                    <svg class="showcase-svg svg-cyber" viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <!-- Shield Core -->
-                      <path class="shield-outline" d="M100 30c25 0 45 10 45 10v40c0 30-20 48-45 53-25-5-45-23-45-53V40s20-10 45-10z" fill="url(#shieldGrad)" stroke="var(--color-primary)" stroke-width="2"/>
-                      <!-- Inner shield detail -->
-                      <path class="shield-inner" d="M100 38c18 0 32 7 32 7v30c0 22-14 36-32 40-18-4-32-18-32-40V45s14-7 32-7z" fill="#0F172A" opacity="0.8"/>
-                      <!-- Lock symbol in shield -->
-                      <rect class="lock-body" x="90" y="70" width="20" height="15" rx="3" fill="var(--color-primary-light)"/>
-                      <path class="lock-shackle" d="M94 70v-8c0-3.3 2.7-6 6-6s6 2.7 6 6v8" stroke="var(--color-primary-light)" stroke-width="2" fill="none"/>
-                      <!-- Laser Scanning Line -->
-                      <line class="scan-laser" x1="50" y1="35" x2="150" y2="35" stroke="#10B981" stroke-width="2"/>
-                      <defs>
-                        <linearGradient id="shieldGrad" x1="100" y1="30" x2="100" y2="133" gradientUnits="userSpaceOnUse">
-                          <stop stop-color="#3B82F6"/>
-                          <stop offset="1" stop-color="#1D4ED8"/>
-                        </linearGradient>
-                      </defs>
-                    </svg>
-                  </div>
-                </div>
-
-                <!-- Slide 4: Web Development -->
-                <div class="hero-showcase__slide" data-index="3">
-                  <div class="hero-showcase__bg bg-web">
-                    <div class="web-panel wp-1"></div>
-                    <div class="web-panel wp-2"></div>
-                  </div>
-                  <div class="hero-showcase__graphic">
-                    <svg class="showcase-svg svg-web" viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <!-- Browser Window -->
-                      <rect x="25" y="30" width="150" height="95" rx="6" fill="#1E293B" stroke="var(--color-border)" stroke-width="1.5"/>
-                      <!-- Title bar -->
-                      <path d="M25 36a6 6 0 016-6h138a6 6 0 016 6v10H25V36z" fill="#0F172A"/>
-                      <circle cx="35" cy="38" r="3" fill="#EF4444"/>
-                      <circle cx="45" cy="38" r="3" fill="#F59E0B"/>
-                      <circle cx="55" cy="38" r="3" fill="#10B981"/>
-                      
-                      <!-- Floating UI Cards -->
-                      <g class="ui-card chart-card">
-                        <rect x="35" y="55" width="55" height="35" rx="4" fill="rgba(255,255,255,0.05)" stroke="var(--color-primary-light)" stroke-width="1"/>
-                        <path class="drawing-path" d="M40 80l12-10 15 5 18-12" stroke="var(--color-accent)" stroke-width="1.5" fill="none"/>
-                        <circle cx="85" cy="63" r="2" fill="var(--color-accent)"/>
-                      </g>
-                      <g class="ui-card button-card">
-                        <rect x="100" y="55" width="65" height="15" rx="3" fill="var(--color-primary)" opacity="0.8"/>
-                        <rect x="110" y="60" width="20" height="4" rx="2" fill="#FFFFFF"/>
-                        <circle cx="150" cy="62" r="3" fill="#10B981" class="cursor-pointer-sim"/>
-                      </g>
-                      <g class="ui-card text-card">
-                        <rect x="100" y="78" width="65" height="35" rx="4" fill="rgba(255,255,255,0.05)" stroke="var(--color-border)" stroke-width="1"/>
-                        <rect x="106" y="85" width="45" height="4" rx="2" fill="#94A3B8"/>
-                        <rect x="106" y="94" width="53" height="4" rx="2" fill="#64748B"/>
-                        <rect x="106" y="103" width="30" height="4" rx="2" fill="#64748B"/>
-                      </g>
-                      <!-- HTML Tag Symbol -->
-                      <text class="web-code-tag" x="35" y="112" fill="var(--color-primary-light)" font-family="monospace" font-size="12" font-weight="bold">&lt;/&gt;</text>
-                    </svg>
-                  </div>
-                </div>
-
-                <!-- Slide 5: Mobile Development -->
-                <div class="hero-showcase__slide" data-index="4">
-                  <div class="hero-showcase__bg bg-mobile">
-                    <div class="mob-pulse ring-1"></div>
-                    <div class="mob-pulse ring-2"></div>
-                  </div>
-                  <div class="hero-showcase__graphic">
-                    <svg class="showcase-svg svg-mobile" viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <!-- Mobile Frame -->
-                      <rect x="65" y="15" width="70" height="120" rx="14" fill="#0F172A" stroke="var(--color-border)" stroke-width="3"/>
-                      <rect x="68" y="22" width="64" height="106" rx="10" fill="#1E293B"/>
-                      <!-- Ear speaker -->
-                      <rect x="90" y="18" width="20" height="2" rx="1" fill="#475569"/>
-                      <!-- Home bar indicator -->
-                      <rect x="85" y="122" width="30" height="3" rx="1.5" fill="#475569"/>
-
-                      <!-- Screen Elements -->
-                      <!-- UI chart -->
-                      <rect class="bar-chart-1" x="78" y="80" width="10" height="25" rx="2" fill="var(--color-accent)"/>
-                      <rect class="bar-chart-2" x="92" y="65" width="10" height="40" rx="2" fill="var(--color-primary-light)"/>
-                      <rect class="bar-chart-3" x="106" y="55" width="10" height="50" rx="2" fill="#10B981"/>
-                      <circle class="phone-dot" cx="111" cy="45" r="3" fill="var(--color-accent)"/>
-
-                      <!-- Floating Messages/Notifications -->
-                      <g class="msg-bubble b-1">
-                        <rect x="142" y="30" width="45" height="18" rx="6" fill="var(--color-primary)" opacity="0.9"/>
-                        <polygon points="142,42 142,36 137,39" fill="var(--color-primary)" opacity="0.9"/>
-                        <rect x="148" y="37" width="25" height="4" rx="2" fill="#FFFFFF"/>
-                      </g>
-                      <g class="msg-bubble b-2">
-                        <rect x="12" y="65" width="45" height="18" rx="6" fill="#10B981" opacity="0.9"/>
-                        <polygon points="57,77 57,71 62,74" fill="#10B981" opacity="0.9"/>
-                        <rect x="18" y="72" width="25" height="4" rx="2" fill="#FFFFFF"/>
-                      </g>
-                    </svg>
-                  </div>
-                </div>
-
-                <!-- Slide 6: Cloud Solutions -->
-                <div class="hero-showcase__slide" data-index="5">
-                  <div class="hero-showcase__bg bg-cloud">
-                    <div class="cloud-blob cb-1"></div>
-                    <div class="cloud-blob cb-2"></div>
-                    <div class="cloud-line cl-1"></div>
-                    <div class="cloud-line cl-2"></div>
-                  </div>
-                  <div class="hero-showcase__graphic">
-                    <svg class="showcase-svg svg-cloud" viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <!-- Cloud shape -->
-                      <path class="svg-cloud-body" d="M140 85a25 25 0 00-24-32 35 35 0 00-61 4 24 24 0 00-15 44h100a25 25 0 000-50z" fill="url(#cloudGrad)" stroke="var(--color-primary-light)" stroke-width="2"/>
-                      
-                      <!-- Server Racks inside Cloud -->
-                      <g class="cloud-servers">
-                        <rect x="68" y="70" width="64" height="12" rx="2" fill="#0F172A" stroke="var(--color-border)" stroke-width="1"/>
-                        <circle cx="75" cy="76" r="2" fill="#10B981" class="cloud-server-led"/>
-                        <circle cx="81" cy="76" r="2" fill="#10B981" class="cloud-server-led"/>
-                        <rect x="92" y="75" width="35" height="2" fill="#475569"/>
-
-                        <rect x="68" y="87" width="64" height="12" rx="2" fill="#0F172A" stroke="var(--color-border)" stroke-width="1"/>
-                        <circle cx="75" cy="93" r="2" fill="#10B981" class="cloud-server-led-2"/>
-                        <circle cx="81" cy="93" r="2" fill="#10B981" class="cloud-server-led-2"/>
-                        <rect x="92" y="92" width="35" height="2" fill="#475569"/>
-                      </g>
-
-                      <!-- Upload/Download Arrows -->
-                      <path class="arrow-up" d="M50 75v-15m0 0l-5 5m5-5l5 5" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                      <path class="arrow-down" d="M150 60v15m0 0l-5-5m5 5l5-5" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-
-                      <defs>
-                        <linearGradient id="cloudGrad" x1="100" y1="50" x2="100" y2="120" gradientUnits="userSpaceOnUse">
-                          <stop stop-color="#1E293B" stop-opacity="0.95"/>
-                          <stop offset="1" stop-color="#0F172A" stop-opacity="0.95"/>
-                        </linearGradient>
-                      </defs>
-                    </svg>
-                  </div>
-                </div>
-
-                <!-- Slide 7: IoT Solutions -->
-                <div class="hero-showcase__slide" data-index="6">
-                  <div class="hero-showcase__bg bg-iot">
-                    <div class="iot-network-bg"></div>
-                    <div class="signal-pulse sp-1"></div>
-                  </div>
-                  <div class="hero-showcase__graphic">
-                    <svg class="showcase-svg svg-iot" viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <!-- Central Router/Hub -->
-                      <circle class="iot-hub-glow" cx="100" cy="75" r="22" fill="url(#iotHubGrad)" opacity="0.3"/>
-                      <rect class="iot-hub" x="88" y="65" width="24" height="20" rx="3" fill="var(--color-primary)" stroke="var(--color-primary-light)" stroke-width="1.5"/>
-                      <!-- Antenna -->
-                      <line x1="100" y1="65" x2="100" y2="52" stroke="var(--color-primary-light)" stroke-width="2"/>
-                      <circle cx="100" cy="50" r="3" fill="var(--color-accent)"/>
-
-                      <!-- Connected smart devices (Bulb, Thermometer, Database) -->
-                      <g class="iot-device dev-bulb">
-                        <circle cx="45" cy="45" r="14" fill="#1E293B" stroke="var(--color-border)" stroke-width="1"/>
-                        <path d="M45 37a5 5 0 00-4 8c1 2 2 3 2 4h4s1-2 2-4a5 5 0 00-4-8z" fill="#F59E0B" class="bulb-glow"/>
-                      </g>
-                      <g class="iot-device dev-gauge">
-                        <circle cx="155" cy="45" r="14" fill="#1E293B" stroke="var(--color-border)" stroke-width="1"/>
-                        <circle cx="155" cy="45" r="8" stroke="var(--color-accent)" stroke-width="1.5" fill="none"/>
-                        <line x1="155" y1="45" x2="160" y2="40" stroke="#10B981" stroke-width="2" class="gauge-needle"/>
-                      </g>
-                      <g class="iot-device dev-db">
-                        <circle cx="100" cy="122" r="14" fill="#1E293B" stroke="var(--color-border)" stroke-width="1"/>
-                        <path d="M93 116h14m-14 4h14m-14 4h14" stroke="var(--color-primary-light)" stroke-width="2"/>
-                      </g>
-
-                      <!-- Connecting Signals -->
-                      <path class="signal-line sl-1" d="M100 50c-20 0-35 8-45 15" stroke="var(--color-primary-light)" stroke-width="1.5" stroke-dasharray="3 3"/>
-                      <path class="signal-line sl-2" d="M100 50c20 0 35 8 45 15" stroke="var(--color-primary-light)" stroke-width="1.5" stroke-dasharray="3 3"/>
-                      <line class="signal-line sl-3" x1="100" y1="85" x2="100" y2="108" stroke="var(--color-primary-light)" stroke-width="1.5" stroke-dasharray="3 3"/>
-
-                      <defs>
-                        <radialGradient id="iotHubGrad" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" transform="translate(100 75) rotate(90) scale(22)">
-                          <stop stop-color="#0EA5E9"/>
-                          <stop offset="1" stop-color="#0EA5E9" stop-opacity="0"/>
-                        </radialGradient>
-                      </defs>
-                    </svg>
-                  </div>
-                </div>
-
-                <!-- Slide 8: Technology Consulting -->
-                <div class="hero-showcase__slide" data-index="7">
-                  <div class="hero-showcase__bg bg-consulting">
-                    <div class="consulting-nodes"></div>
-                    <div class="flow-arrow fa-1"></div>
-                  </div>
-                  <div class="hero-showcase__graphic">
-                    <svg class="showcase-svg svg-consulting" viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <!-- Strategy Flowchart Nodes -->
-                      <g class="flow-nodes">
-                        <!-- Node A: Idea -->
-                        <rect class="fn-rect f-1" x="20" y="60" width="36" height="24" rx="4" fill="#1E293B" stroke="var(--color-primary-light)" stroke-width="1.5"/>
-                        <circle cx="38" cy="72" r="4" fill="var(--color-primary-light)"/>
-                        
-                        <!-- Node B: Execution -->
-                        <rect class="fn-rect f-2" x="82" y="60" width="36" height="24" rx="4" fill="var(--color-primary)" stroke="var(--color-primary-light)" stroke-width="1.5"/>
-                        <path d="M95 72l3 3 5-5" stroke="#FFFFFF" stroke-width="2" fill="none" class="check-draw"/>
-
-                        <!-- Node C: Growth -->
-                        <rect class="fn-rect f-3" x="144" y="60" width="36" height="24" rx="4" fill="#1E293B" stroke="var(--color-primary-light)" stroke-width="1.5"/>
-                        <path d="M152 76V68m4 8v-5m4 5v-8" stroke="var(--color-accent)" stroke-width="1.5" class="growth-lines"/>
-                      </g>
-
-                      <!-- Connecting Arrow lines -->
-                      <path class="flow-connector c-1" d="M56 72h26" stroke="var(--color-border)" stroke-width="1.5" marker-end="url(#arrowMarker)"/>
-                      <path class="flow-connector c-2" d="M118 72h26" stroke="var(--color-border)" stroke-width="1.5" marker-end="url(#arrowMarker)"/>
-
-                      <!-- Fading Lightbulb representation of Strategy -->
-                      <g class="strategic-bulb">
-                        <path class="bulb-silhouette" d="M100 25c-8 0-14 6-14 14 0 5 3 9 5 11v4h18v-4c2-2 5-6 5-11 0-8-6-14-14-14z" fill="none" stroke="var(--color-accent)" stroke-dasharray="3 3"/>
-                        <circle class="bulb-glow-circle" cx="100" cy="39" r="6" fill="var(--color-accent)" opacity="0.3"/>
-                      </g>
-
-                      <defs>
-                        <!-- Marker for flowchart arrows -->
-                        <marker id="arrowMarker" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
-                          <polygon points="0,0 6,3 0,6" fill="var(--color-border)"/>
-                        </marker>
-                      </defs>
-                    </svg>
-                  </div>
-                </div>
-
-              </div> <!-- End of Visuals -->
-
-              <div class="hero-showcase__controls">
-                <div class="showcase-badge">
-                  <span class="showcase-badge__title">Software Development</span>
-                  <span class="showcase-badge__chips">Java • Spring Boot • MySQL</span>
-                </div>
-                <div class="showcase-dots">
-                  <button class="showcase-dot active" data-slide="0" aria-label="Go to slide 1"></button>
-                  <button class="showcase-dot" data-slide="1" aria-label="Go to slide 2"></button>
-                  <button class="showcase-dot" data-slide="2" aria-label="Go to slide 3"></button>
-                  <button class="showcase-dot" data-slide="3" aria-label="Go to slide 4"></button>
-                  <button class="showcase-dot" data-slide="4" aria-label="Go to slide 5"></button>
-                  <button class="showcase-dot" data-slide="5" aria-label="Go to slide 6"></button>
-                  <button class="showcase-dot" data-slide="6" aria-label="Go to slide 7"></button>
-                  <button class="showcase-dot" data-slide="7" aria-label="Go to slide 8"></button>
-                </div>
-                <div class="showcase-progress-container">
-                  <div class="showcase-progress-bar"></div>
-                </div>
+                <!-- Rotating tech rings -->
+                <div class="shield-ring ring-outer"></div>
+                <div class="shield-ring ring-inner"></div>
+                
+                <!-- Floating security nodes -->
+                <div class="floating-node node-1">AI Core</div>
+                <div class="floating-node node-2">Zero Trust</div>
+                <div class="floating-node node-3">Cloud Sec</div>
               </div>
-
             </div>
           </div>
         </div>
       </div>
     </section>
+
 
 
     <!-- Technologies We Work With Section -->
@@ -856,6 +567,12 @@
           </div>
         </div>
       </div>
+      <!-- Wave Transition -->
+      <div class="section-transition-wave">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" fill="#ffffff"></path>
+        </svg>
+      </div>
     </section>
 
     <!-- Company Overview -->
@@ -881,17 +598,49 @@
           </div>
           <div class="overview__image animate-on-scroll" data-delay="2">
             <div class="overview__image-inner">
-              <p style="font-size: 1.125rem; margin-bottom: 0.5rem; color: rgba(255,255,255,0.8);">Delivering Results
-              </p>
-              <p style="font-size: 2rem; font-weight: 700; color: white;">Enterprise-Grade Solutions</p>
-              <div class="overview__stat-row">
-                <div class="overview__mini-stat">
-                  <strong>50+</strong>
+              <!-- Premium Animated Dashboard -->
+              <div class="premium-dashboard">
+                <div class="dash-header">
+                  <div class="dash-dots">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                  </div>
+                </div>
+                <div class="dash-body">
+                  <div class="dash-panel panel-left">
+                    <div class="dash-line w-80"></div>
+                    <div class="dash-line w-60"></div>
+                    <div class="dash-line w-90"></div>
+                    <div class="dash-skeleton-box">
+                      <div class="skeleton-chart-bar" style="height: 30%"></div>
+                      <div class="skeleton-chart-bar" style="height: 50%"></div>
+                      <div class="skeleton-chart-bar" style="height: 80%"></div>
+                      <div class="skeleton-chart-bar" style="height: 60%"></div>
+                    </div>
+                  </div>
+                  <div class="dash-panel panel-right">
+                    <div class="dash-circle-chart">
+                      <div class="circle-inner">98%</div>
+                    </div>
+                    <div class="dash-line w-100"></div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Stats row -->
+              <div class="overview__stat-row" style="justify-content: center; gap: var(--space-6);">
+                <div class="overview__mini-stat stat-pulse-wrapper">
+                  <strong data-counter="50" data-suffix="+">0</strong>
                   <span>Projects Delivered</span>
                 </div>
-                <div class="overview__mini-stat">
-                  <strong>98%</strong>
-                  <span>Client Satisfaction</span>
+                <div class="overview__mini-stat stat-pulse-wrapper">
+                  <strong data-counter="30" data-suffix="+">0</strong>
+                  <span>Happy Clients</span>
+                </div>
+                <div class="overview__mini-stat stat-pulse-wrapper">
+                  <strong data-counter="98" data-suffix="%">0</strong>
+                  <span>Satisfaction Rate</span>
                 </div>
               </div>
             </div>
@@ -910,8 +659,8 @@
             transformation journey.</p>
         </div>
         <div class="grid grid--3">
-          <article class="card card--lift animate-on-scroll">
-            <div class="card__icon" aria-hidden="true">
+          <article class="service-card fade-up animate-on-scroll">
+            <div class="service-icon-wrapper" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M16 18l6-6-6-6M8 6l-6 6 6 6" />
               </svg>
@@ -924,8 +673,8 @@
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg></a>
           </article>
-          <article class="card card--lift animate-on-scroll" data-delay="1">
-            <div class="card__icon" aria-hidden="true">
+          <article class="service-card fade-up animate-on-scroll" data-delay="1">
+            <div class="service-icon-wrapper" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <circle cx="12" cy="12" r="3" />
                 <path
@@ -940,8 +689,8 @@
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg></a>
           </article>
-          <article class="card card--lift animate-on-scroll" data-delay="2">
-            <div class="card__icon" aria-hidden="true">
+          <article class="service-card fade-up animate-on-scroll" data-delay="2">
+            <div class="service-icon-wrapper" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
               </svg>
@@ -954,8 +703,8 @@
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg></a>
           </article>
-          <article class="card card--lift animate-on-scroll" data-delay="1">
-            <div class="card__icon" aria-hidden="true">
+          <article class="service-card fade-up animate-on-scroll" data-delay="1">
+            <div class="service-icon-wrapper" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <rect x="2" y="3" width="20" height="14" rx="2" />
                 <path d="M8 21h8M12 17v4" />
@@ -969,8 +718,8 @@
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg></a>
           </article>
-          <article class="card card--lift animate-on-scroll" data-delay="2">
-            <div class="card__icon" aria-hidden="true">
+          <article class="service-card fade-up animate-on-scroll" data-delay="2">
+            <div class="service-icon-wrapper" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <rect x="5" y="2" width="14" height="20" rx="2" />
                 <path d="M12 18h.01" />
@@ -984,8 +733,8 @@
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg></a>
           </article>
-          <article class="card card--lift animate-on-scroll" data-delay="3">
-            <div class="card__icon" aria-hidden="true">
+          <article class="service-card fade-up animate-on-scroll" data-delay="3">
+            <div class="service-icon-wrapper" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M18 10h-6V4M6 14h6v6" />
                 <rect x="3" y="3" width="18" height="18" rx="2" />
@@ -1071,10 +820,83 @@
       </div>
     </section>
 
-
-
-
-
+    <!-- Success Stories -->
+    <section class="section" aria-labelledby="success-title">
+      <div class="container">
+        <div class="section-header section-header--center animate-on-scroll">
+          <span class="section-label">Success Stories</span>
+          <h2 id="success-title" class="section-title">Client Testimonials</h2>
+        </div>
+        <div class="testimonial-carousel">
+          <div class="testimonial-track">
+            <!-- Testimonial 1 -->
+            <div class="testimonial-card">
+              <p class="testimonial-text">"Aryan Software Solutions transformed our legacy systems into a modern, highly scalable platform. Their expertise is unmatched."</p>
+              <div class="testimonial-author">
+                <div class="author-avatar" style="background-color: #3b82f6;">SJ</div>
+                <div class="author-info">
+                  <strong>Sarah Jenkins</strong>
+                  <span>CTO, FinTech Innovators</span>
+                </div>
+              </div>
+            </div>
+            <!-- Testimonial 2 -->
+            <div class="testimonial-card">
+              <p class="testimonial-text">"The AI monitoring system they built reduced our security incidents by 40%. Brilliant team and flawless execution."</p>
+              <div class="testimonial-author">
+                <div class="author-avatar" style="background-color: #10b981;">MK</div>
+                <div class="author-info">
+                  <strong>Michael Korr</strong>
+                  <span>Director of Security, Logistix</span>
+                </div>
+              </div>
+            </div>
+            <!-- Testimonial 3 -->
+            <div class="testimonial-card">
+              <p class="testimonial-text">"Outstanding communication and delivery. We consider Aryan Software Solutions as an extension of our internal team."</p>
+              <div class="testimonial-author">
+                <div class="author-avatar" style="background-color: #f59e0b;">AL</div>
+                <div class="author-info">
+                  <strong>Anita Lopez</strong>
+                  <span>VP Engineering, RetailEdge</span>
+                </div>
+              </div>
+            </div>
+            <!-- Duplicate for infinite scroll loop -->
+            <div class="testimonial-card">
+              <p class="testimonial-text">"Aryan Software Solutions transformed our legacy systems into a modern, highly scalable platform. Their expertise is unmatched."</p>
+              <div class="testimonial-author">
+                <div class="author-avatar" style="background-color: #3b82f6;">SJ</div>
+                <div class="author-info">
+                  <strong>Sarah Jenkins</strong>
+                  <span>CTO, FinTech Innovators</span>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <p class="testimonial-text">"The AI monitoring system they built reduced our security incidents by 40%. Brilliant team and flawless execution."</p>
+              <div class="testimonial-author">
+                <div class="author-avatar" style="background-color: #10b981;">MK</div>
+                <div class="author-info">
+                  <strong>Michael Korr</strong>
+                  <span>Director of Security, Logistix</span>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <p class="testimonial-text">"Outstanding communication and delivery. We consider Aryan Software Solutions as an extension of our internal team."</p>
+              <div class="testimonial-author">
+                <div class="author-avatar" style="background-color: #f59e0b;">AL</div>
+                <div class="author-info">
+                  <strong>Anita Lopez</strong>
+                  <span>VP Engineering, RetailEdge</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <!-- Statistics -->
     <section class="section section--dark" aria-labelledby="stats-title">
       <div class="container">
@@ -1084,15 +906,15 @@
         </div>
         <div class="stats-grid">
           <div class="stat-item animate-on-scroll">
-            <div class="stat-item__number" data-counter="50" data-suffix="+">0</div>
+            <div class="stat-item__number" data-counter="10" data-suffix="+">0</div>
             <div class="stat-item__label">Projects Completed</div>
           </div>
           <div class="stat-item animate-on-scroll" data-delay="1">
-            <div class="stat-item__number" data-counter="30" data-suffix="+">0</div>
+            <div class="stat-item__number" data-counter="10" data-suffix="+">0</div>
             <div class="stat-item__label">Happy Clients</div>
           </div>
           <div class="stat-item animate-on-scroll" data-delay="2">
-            <div class="stat-item__number" data-counter="15" data-suffix="+">0</div>
+            <div class="stat-item__number" data-counter="10" data-suffix="+">0</div>
             <div class="stat-item__label">Technology Domains</div>
           </div>
           <div class="stat-item animate-on-scroll" data-delay="3">
@@ -1147,14 +969,14 @@
     <!-- Call To Action -->
     <section class="section" aria-labelledby="cta-title">
       <div class="container">
-        <div class="cta-banner animate-on-scroll">
+        <div class="cta-banner cta-premium-glass animate-on-scroll">
           <div class="cta-banner__content">
             <h2 id="cta-title" class="cta-banner__title">Ready to Transform Your Business?</h2>
             <p class="cta-banner__text">Partner with Aryan Software Solutions to build intelligent, secure, and scalable
               software that drives growth.</p>
             <div class="btn-group" style="justify-content: center;">
-              <a href="contact.html" class="btn btn--white btn--lg">Start a Project</a>
-              <a href="services.html" class="btn btn--outline btn--lg"
+              <a href="contact.html" class="btn btn--white btn--lg magnetic-btn">Start a Project</a>
+              <a href="services.html" class="btn btn--outline btn--lg magnetic-btn"
                 style="color: white; border-color: rgba(255,255,255,0.4);">Explore Services</a>
             </div>
           </div>
@@ -1224,6 +1046,14 @@
       </div>
     </div>
   </footer>
+
+  <!-- Floating CTA -->
+  <a href="contact.html" class="floating-cta" id="floatingCta">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+    </svg>
+    Let's Talk
+  </a>
 
   <script src="assets/js/network.js" defer></script>
   <script src="assets/js/main.js" defer></script>

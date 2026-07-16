@@ -16,10 +16,14 @@
   <meta name="twitter:card" content="summary_large_image">
   <title>Services | Aryan Software Solutions</title>
   <link rel="icon" type="image/png" href="logo-v4.png">
+  <link rel="apple-touch-icon" href="logo-v4.png">
+  <meta name="theme-color" content="#2563EB">
+  <link rel="manifest" href="manifest.json">
+  <script>localStorage.removeItem('theme'); document.documentElement.removeAttribute('data-theme');</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/main.css?v=3">
+  <link rel="stylesheet" href="assets/css/main.css?v=17">
 
   <!-- Tailwind CSS & Lucide Icons CDNs -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -62,8 +66,119 @@
       background-size: 14px 14px;
     }
 
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    /* Global font — force Inter throughout */
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    span,
+    a,
+    button,
+    input,
+    textarea,
+    li {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    }
+
+    /* ── Dark Mode: override Tailwind hardcoded colors ── */
+    [data-theme="dark"] body {
+      background-color: #0F172A !important;
+      color: #F1F5F9 !important;
+    }
+
+    [data-theme="dark"] #services-page,
+    [data-theme="dark"] .bg-slate-50,
+    [data-theme="dark"] .bg-slate-50\/50 {
+      background-color: #0F172A !important;
+    }
+
+    [data-theme="dark"] section.py-20 {
+      background-color: #0F172A !important;
+    }
+
+    /* Service cards */
+    [data-theme="dark"] .bg-white {
+      background-color: #1E293B !important;
+    }
+
+    /* Card borders */
+    [data-theme="dark"] .border-slate-200 {
+      border-color: #334155 !important;
+    }
+
+    [data-theme="dark"] .border-slate-100 {
+      border-color: #1E293B !important;
+    }
+
+    /* Card title text */
+    [data-theme="dark"] .text-\[\#1E293B\] {
+      color: #F1F5F9 !important;
+    }
+
+    /* Muted text */
+    [data-theme="dark"] .text-slate-500 {
+      color: #94A3B8 !important;
+    }
+
+    [data-theme="dark"] .text-slate-400 {
+      color: #64748B !important;
+    }
+
+    [data-theme="dark"] .text-slate-700 {
+      color: #CBD5E1 !important;
+    }
+
+    [data-theme="dark"] .text-slate-600 {
+      color: #94A3B8 !important;
+    }
+
+    /* Badge pill strips */
+    [data-theme="dark"] .bg-slate-50.border.border-slate-200 {
+      background-color: #0F172A !important;
+      border-color: #334155 !important;
+    }
+
+    /* Section heading */
+    [data-theme="dark"] .text-\[\#1E293B\]:not(h3) {
+      color: #F1F5F9 !important;
+    }
+
+    /* Registry badge */
+    [data-theme="dark"] .bg-white.border.border-slate-200.rounded-lg {
+      background-color: #1E293B !important;
+      border-color: #334155 !important;
+    }
+
+    /* Icon containers */
+    [data-theme="dark"] .bg-blue-50 {
+      background-color: rgba(37, 99, 235, 0.15) !important;
+    }
+
+    [data-theme="dark"] .border-blue-100 {
+      border-color: rgba(37, 99, 235, 0.25) !important;
+    }
+
+    /* Divider */
+    [data-theme="dark"] .border-t.border-slate-100 {
+      border-color: #1E293B !important;
+    }
+
+    /* Keep Consultation Button White in Dark Mode */
+    [data-theme="dark"] .consultation-btn {
+      background-color: #FFFFFF !important;
+      color: #0F172A !important;
+    }
+
+    [data-theme="dark"] .consultation-btn:hover {
+      background-color: #F1F5F9 !important;
+    }
+
+    [data-theme="dark"] .consultation-btn i {
+      color: #475569 !important;
     }
   </style>
 
@@ -92,8 +207,8 @@
 
   <nav class="nav" role="navigation" aria-label="Main navigation">
     <a href="index.html" class="nav__link">Home</a><a href="about.html" class="nav__link">About</a><a
-      href="services.html" class="nav__link nav__link--active" aria-current="page">Services</a><a
-      href="projects.html" class="nav__link">Projects</a><a href="careers.html" class="nav__link">Careers</a><a href="contact.html"
+      href="services.html" class="nav__link nav__link--active" aria-current="page">Services</a><a href="projects.html"
+      class="nav__link">Projects</a><a href="careers.html" class="nav__link">Careers</a><a href="contact.html"
       class="nav__link">Contact</a>
   </nav>
 
@@ -712,7 +827,7 @@
             </p>
             <div class="pt-4">
               <a href="contact.html"
-                class="inline-flex items-center space-x-2 bg-white hover:bg-slate-100 text-slate-900 font-bold text-sm px-6 py-3.5 rounded-xl transition-all shadow-lg hover:shadow-xl hover:translate-y-[-1px]">
+                class="consultation-btn inline-flex items-center space-x-2 bg-white hover:bg-slate-100 text-slate-900 font-bold text-sm px-6 py-3.5 rounded-xl transition-all shadow-lg hover:shadow-xl hover:translate-y-[-1px]">
                 <span>Request a Consultation</span>
                 <i data-lucide="arrow-right" class="w-4 h-4 text-slate-600"></i>
               </a>
@@ -726,8 +841,9 @@
   <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer__grid">
-        <div class="footer__brand">          <a href="index.html" class="logo" style="color: white;">
-            <img src="logo-v4.png" alt="Aryan Software Solutions Logo" class="logo-img" style="height: 38px; width: auto;">
+        <div class="footer__brand"> <a href="index.html" class="logo" style="color: white;">
+            <img src="logo-v4.png" alt="Aryan Software Solutions Logo" class="logo-img"
+              style="height: 38px; width: auto;">
             <span class="logo__text">
               <span class="logo__name" style="color: white;">Aryan Software Solutions</span>
               <span class="logo__tagline" style="color: #38BDF8;">Innovate &bull; Develop &bull; Secure</span>

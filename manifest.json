@@ -1,0 +1,17 @@
+{
+  "name": "Aryan Software Solutions",
+  "short_name": "Aryan",
+  "description": "Enterprise software development, AI, cybersecurity, IoT, and cloud solutions.",
+  "start_url": "/",
+  "display": "browser",
+  "theme_color": "#2563EB",
+  "background_color": "#FFFFFF",
+  "icons": [
+    {
+      "src": "logo-v4.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

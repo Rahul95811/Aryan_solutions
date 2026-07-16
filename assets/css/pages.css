@@ -433,6 +433,7 @@
   color: var(--color-secondary);
   background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 0;
 }
@@ -1353,32 +1354,34 @@
   clear: both;
   width: 100%;
   display: block;
-  background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-bg-light) 50%, var(--color-bg) 100%);
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #4c1d95 100%);
   padding-block: var(--space-12) var(--space-16);
   position: relative;
   overflow: hidden;
   z-index: 3;
 }
 
-.tech-showcase-header {
-  text-align: center;
-  margin-bottom: var(--space-8);
-}
-
+.tech-showcase .section-title,
 .tech-showcase-title {
   font-size: var(--text-sm);
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--color-primary-light);
+  color: #ffffff !important;
   margin-bottom: var(--space-2);
 }
 
+.tech-showcase .section-subtitle,
 .tech-showcase-subtitle {
   font-size: var(--text-sm);
-  color: var(--color-text-muted);
+  color: rgba(255, 255, 255, 0.75) !important;
   max-width: 500px;
   margin-inline: auto;
+}
+
+.tech-showcase-header {
+  text-align: center;
+  margin-bottom: var(--space-8);
 }
 
 .marquee-showcase-container {
@@ -1407,10 +1410,10 @@
 .marquee-particles::after {
   content: '';
   position: absolute;
-  width: 250px;
-  height: 250px;
-  background: radial-gradient(circle, rgba(37, 99, 235, 0.04) 0%, transparent 70%);
-  filter: blur(30px);
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(167, 139, 250, 0.25) 0%, transparent 70%);
+  filter: blur(40px);
   pointer-events: none;
   z-index: 0;
   animation: marqueeDriftBg 15s ease-in-out infinite alternate;
@@ -1472,28 +1475,27 @@
   gap: 16px;
   height: 90px;
   padding-inline: 44px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.75) 0%, rgba(var(--card-color), 0.04) 50%, rgba(var(--card-color), 0.1) 100%);
+  background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1.5px solid rgba(var(--card-color), 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 20px;
-  box-shadow: 
-    0 4px 20px -4px rgba(15, 23, 42, 0.03),
-    0 2px 8px -2px rgba(var(--card-color), 0.05),
-    inset 0 0 12px rgba(255, 255, 255, 0.2);
-  color: var(--color-secondary);
+  box-shadow: inset 0 0 12px rgba(255, 255, 255, 0.02);
+  color: rgba(255, 255, 255, 0.6);
   font-weight: 550;
   font-size: 1.1rem;
   white-space: nowrap;
   position: relative;
   cursor: pointer;
   transform-style: preserve-3d;
+  filter: grayscale(100%);
   transition: 
     transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
     border-color 0.3s ease,
     box-shadow 0.3s ease,
-    background-color 0.3s ease,
-    color 0.3s ease;
+    background 0.3s ease,
+    color 0.3s ease,
+    filter 0.3s ease;
 }
 
 .card-icon {
@@ -1502,7 +1504,7 @@
   justify-content: center;
   width: 30px;
   height: 30px;
-  color: rgba(var(--card-color), 0.85);
+  color: rgba(255, 255, 255, 0.6);
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
@@ -1526,12 +1528,13 @@
 /* Marquee Card Hover Effects */
 .marquee-card:hover {
   transform: translateY(-6px) scale(1.04);
-  border-color: rgba(var(--card-color), 0.55);
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(var(--card-color), 0.08) 50%, rgba(var(--card-color), 0.18) 100%);
+  border-color: rgba(var(--card-color), 0.6);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(var(--card-color), 0.25) 50%, rgba(var(--card-color), 0.35) 100%);
   box-shadow: 
-    0 12px 30px -4px rgba(var(--card-color), 0.25),
-    0 4px 12px -2px rgba(var(--card-color), 0.1);
-  color: rgb(var(--card-color));
+    0 12px 30px -4px rgba(var(--card-color), 0.5),
+    0 4px 12px -2px rgba(0, 0, 0, 0.4);
+  color: #ffffff;
+  filter: grayscale(0%);
 }
 
 .marquee-card:hover .card-glow {
