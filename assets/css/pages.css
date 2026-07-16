@@ -6,7 +6,16 @@
   align-items: center;
   padding-top: var(--header-height);
   overflow: hidden;
-  background: linear-gradient(180deg, var(--color-bg-light) 0%, var(--color-bg) 100%);
+  background: radial-gradient(ellipse at top, #FFFFFF 0%, var(--color-bg-light-blue) 100%);
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.1), transparent);
+  z-index: 1;
 }
 
 .hero__canvas {

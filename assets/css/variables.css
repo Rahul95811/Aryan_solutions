@@ -2,17 +2,24 @@
   --color-primary: #2563EB;
   --color-primary-dark: #1D4ED8;
   --color-primary-light: #3B82F6;
-  --color-secondary: #1E293B;
-  --color-accent: #0EA5E9;
+  --color-secondary: #0F172A;
+  --color-accent: #06B6D4;
+  --color-accent-purple: #7C3AED;
   --color-success: #10B981;
   --color-bg: #FFFFFF;
   --color-bg-light: #F8FAFC;
   --color-bg-muted: #F1F5F9;
+  --color-bg-light-blue: #F8FAFC;
+  --color-bg-light-purple: #F1F5F9;
   --color-text: #0F172A;
   --color-text-muted: #64748B;
   --color-text-light: #94A3B8;
   --color-border: #E2E8F0;
   --color-border-light: #F1F5F9;
+
+  --gradient-blue: linear-gradient(135deg, #1D4ED8, #3B82F6);
+  --gradient-dark: linear-gradient(135deg, #0F172A, #1E293B);
+  --gradient-purple: linear-gradient(135deg, #4F46E5, #7C3AED);
 
   --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
@@ -73,6 +80,8 @@
   --color-bg:           #0F172A;
   --color-bg-light:     #1E293B;
   --color-bg-muted:     #1E293B;
+  --color-bg-light-blue: #1E293B;
+  --color-bg-light-purple: #1E293B;
   --color-text:         #F1F5F9;
   --color-text-muted:   #94A3B8;
   --color-text-light:   #64748B;

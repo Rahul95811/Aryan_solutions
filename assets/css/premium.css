@@ -89,14 +89,19 @@
 }
 
 .btn--primary {
-  background: linear-gradient(135deg, var(--color-primary) 0%, #1d4ed8 100%);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--color-primary);
+  border: 1px solid transparent;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
+  color: #fff;
+  transition: all 0.2s ease;
 }
 
 .btn--primary:hover {
-  background: linear-gradient(135deg, #3b82f6 0%, var(--color-primary) 100%);
+  background: var(--color-primary-dark);
+  box-shadow: 0 6px 15px rgba(37, 99, 235, 0.3);
+  transform: translateY(-1px);
+  color: #fff;
 }
-
 .btn--secondary {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
@@ -128,7 +133,15 @@
   position: relative;
   overflow: hidden;
   z-index: 1;
+  border-top: 4px solid var(--card-accent, var(--color-border));
 }
+
+.service-card.accent-blue { --card-accent: #2563EB; --hover-tint: rgba(37, 99, 235, 0.03); --hover-glow: rgba(37, 99, 235, 0.2); }
+.service-card.accent-purple { --card-accent: #7C3AED; --hover-tint: rgba(124, 58, 237, 0.03); --hover-glow: rgba(124, 58, 237, 0.2); }
+.service-card.accent-cyan { --card-accent: #06B6D4; --hover-tint: rgba(6, 182, 212, 0.03); --hover-glow: rgba(6, 182, 212, 0.2); }
+.service-card.accent-indigo { --card-accent: #4F46E5; --hover-tint: rgba(79, 70, 229, 0.03); --hover-glow: rgba(79, 70, 229, 0.2); }
+.service-card.accent-teal { --card-accent: #0D9488; --hover-tint: rgba(13, 148, 136, 0.03); --hover-glow: rgba(13, 148, 136, 0.2); }
+.service-card.accent-navy { --card-accent: #0F172A; --hover-tint: rgba(15, 23, 42, 0.03); --hover-glow: rgba(15, 23, 42, 0.2); }
 
 .service-card::before {
   content: '';
@@ -145,9 +158,8 @@
 }
 
 .service-card:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.08), 0 0 20px rgba(37, 99, 235, 0.1);
-  border-color: rgba(37, 99, 235, 0.2);
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.15), 0 0 0 1px var(--card-accent, rgba(37, 99, 235, 0.1));
   background: #ffffff;
 }
 
@@ -198,7 +210,7 @@
 .shield-svg {
   width: 100%;
   height: auto;
-  drop-shadow: 0 20px 30px rgba(37, 99, 235, 0.4);
+  filter: drop-shadow(0 20px 30px rgba(37, 99, 235, 0.4));
 }
 
 @keyframes floatShield {
@@ -521,13 +533,13 @@
 
 /* ---------- Premium CTA Glassmorphism ---------- */
 .cta-premium-glass {
-  background: linear-gradient(135deg, #2563EB 0%, #1E1B4B 50%, #0F172A 100%);
+  background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
   color: #ffffff;
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 24px;
   padding: 4rem 2rem;
-  box-shadow: 0 25px 50px -12px rgba(37, 99, 235, 0.3);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.2);
   position: relative;
   overflow: hidden;
 }
@@ -540,12 +552,9 @@
 .cta-premium-glass::before {
   content: '';
   position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
-  animation: rotateGlow 15s linear infinite;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.5), transparent);
   pointer-events: none;
 }
 
