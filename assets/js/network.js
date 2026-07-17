@@ -12,10 +12,25 @@
   let animationId;
   let width, height;
 
-  const NODE_COUNT = 60;
-  const CONNECTION_DISTANCE = 140;
-  const NODE_COLOR = 'rgba(37, 99, 235, 0.35)';
-  const LINE_COLOR = 'rgba(37, 99, 235, 0.08)';
+  const NODE_COUNT = 80;
+  const CONNECTION_DISTANCE = 150;
+  const NODE_COLOR = 'rgba(6, 182, 212, 0.5)'; // Secondary Accent (Cyan)
+  const LINE_COLOR = 'rgba(59, 130, 246, 0.15)'; // Primary Accent (Blue)
+
+  let mouseX = -1000;
+  let mouseY = -1000;
+
+  // Add mouse tracking for parallax/interaction
+  window.addEventListener('mousemove', (e) => {
+    const rect = canvas.getBoundingClientRect();
+    mouseX = e.clientX - rect.left;
+    mouseY = e.clientY - rect.top;
+  });
+
+  window.addEventListener('mouseleave', () => {
+    mouseX = -1000;
+    mouseY = -1000;
+  });
 
   function resize() {
     const rect = canvas.parentElement.getBoundingClientRect();
@@ -35,9 +50,11 @@
       nodes.push({
         x: Math.random() * width,
         y: Math.random() * height,
-        vx: (Math.random() - 0.5) * 0.3,
-        vy: (Math.random() - 0.5) * 0.3,
-        radius: Math.random() * 1.5 + 1
+        vx: (Math.random() - 0.5) * 0.4,
+        vy: (Math.random() - 0.5) * 0.4,
+        radius: Math.random() * 2 + 1,
+        baseX: 0,
+        baseY: 0
       });
     }
   }
@@ -46,6 +63,16 @@
     ctx.clearRect(0, 0, width, height);
 
     nodes.forEach((node) => {
+      // Mouse avoidance / interaction
+      const dxMouse = mouseX - node.x;
+      const dyMouse = mouseY - node.y;
+      const distMouse = Math.sqrt(dxMouse * dxMouse + dyMouse * dyMouse);
+      
+      if (distMouse < 150) {
+        node.x -= dxMouse * 0.02;
+        node.y -= dyMouse * 0.02;
+      }
+
       node.x += node.vx;
       node.y += node.vy;
 

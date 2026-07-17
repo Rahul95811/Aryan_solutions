@@ -64,15 +64,15 @@
           }
         });
       },
-      { threshold: 0.08, rootMargin: '0px 0px 0px 0px' }
+      { threshold: 0.02, rootMargin: '0px 0px 150px 0px' }
     );
 
     animatedElements.forEach((el) => observer.observe(el));
 
-    // Safety fallback: ensure no element stays invisible after 2 seconds
+    // Safety fallback: ensure no element stays invisible
     setTimeout(() => {
       animatedElements.forEach((el) => el.classList.add('is-visible'));
-    }, 2000);
+    }, 400);
   } else {
     animatedElements.forEach((el) => el.classList.add('is-visible'));
   }

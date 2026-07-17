@@ -4,9 +4,9 @@
   min-height: calc(100vh - var(--header-height));
   display: flex;
   align-items: center;
-  padding-top: var(--header-height);
+  padding-top: calc(var(--header-height) + 40px); /* Add proper spacing below navbar */
   overflow: hidden;
-  background: radial-gradient(ellipse at top, #FFFFFF 0%, var(--color-bg-light-blue) 100%);
+  background: var(--gradient-hero); /* Dark enterprise background */
 }
 
 .hero::before {
@@ -79,6 +79,21 @@
 .hero__title {
   margin-bottom: var(--space-6);
   line-height: 1.15;
+  color: #FFFFFF;
+  font-weight: 800;
+  font-size: 36px;
+}
+
+@media (min-width: 768px) {
+  .hero__title {
+    font-size: 44px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero__title {
+    font-size: 56px;
+  }
 }
 
 .hero__title span {
@@ -90,6 +105,7 @@
   line-height: 1.7;
   margin-bottom: 0;
   max-width: 580px;
+  color: #E2E8F0;
 }
 
 @media (min-width: 992px) {

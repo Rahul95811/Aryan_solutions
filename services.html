@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 
 <head>
   <meta charset="UTF-8">
@@ -19,7 +19,7 @@
   <link rel="apple-touch-icon" href="logo-v4.png">
   <meta name="theme-color" content="#2563EB">
   <link rel="manifest" href="manifest.json">
-  <script>localStorage.removeItem('theme'); document.documentElement.removeAttribute('data-theme');</script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -120,7 +120,7 @@
     }
 
     /* Muted text */
-    [data-theme="dark"] .text-slate-500 {
+    [data-theme="dark"] .text-\[\#E2E8F0\] {
       color: #94A3B8 !important;
     }
 
@@ -199,17 +199,17 @@
         </span>
       </a>
       <div class="header__actions"><button
-          class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false"><span
-            class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span
-            class="nav-toggle__bar"></span></button></div>
+         class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false"><span
+           class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span
+           class="nav-toggle__bar"></span></button></div>
     </div>
   </header>
 
   <nav class="nav" role="navigation" aria-label="Main navigation">
     <a href="index.html" class="nav__link">Home</a><a href="about.html" class="nav__link">About</a><a
       href="services.html" class="nav__link nav__link--active" aria-current="page">Services</a><a href="projects.html"
-      class="nav__link">Projects</a><a href="careers.html" class="nav__link">Careers</a><a href="contact.html"
-      class="nav__link">Contact</a>
+     class="nav__link">Projects</a><a href="careers.html" class="nav__link">Careers</a><a href="contact.html"
+     class="nav__link">Contact</a>
   </nav>
 
   <main id="main-content">
@@ -227,7 +227,7 @@
             <h2 class="text-3xl sm:text-4xl font-extrabold text-[#1E293B] tracking-tight">
               Enterprise Technology Competence
             </h2>
-            <p class="text-sm sm:text-base text-slate-500 font-normal leading-relaxed">
+            <p class="text-sm sm:text-base text-[#E2E8F0] font-normal leading-relaxed">
               We specialize in engineering robust production pipelines that allow your systems to grow, defend, and
               optimize under active commercial environments.
             </p>
@@ -235,7 +235,7 @@
 
           <div class="mt-4 md:mt-0">
             <div
-              class="inline-flex items-center space-x-2 text-xs text-slate-500 font-mono bg-white border border-slate-200 rounded-lg py-1.5 px-3">
+             class="inline-flex items-center space-x-2 text-xs text-[#E2E8F0] font-mono bg-white border border-slate-200 rounded-lg py-1.5 px-3">
               <span class="w-2.5 h-2.5 bg-emerald-500 rounded-full animate-pulse"></span>
               <span>ACTIVE CLIENT REGISTRY: SECURE</span>
             </div>
@@ -247,16 +247,16 @@
 
           <!-- Card 1: Software Development -->
           <div
-            class="bg-white border border-slate-200 rounded-2xl p-6 shadow-xs hover:shadow-xl hover:border-[#2563EB]/40 transform hover:translate-y-[-4px] transition-all duration-200 flex flex-col justify-between group reveal-on-scroll"
+           class="bg-white border border-slate-200 rounded-2xl p-6 shadow-xs hover:shadow-xl hover:border-[#2563EB]/40 transform hover:translate-y-[-4px] transition-all duration-200 flex flex-col justify-between group reveal-on-scroll"
             id="service-card-0">
             <div class="space-y-4">
               <div class="flex items-center justify-between">
                 <div
-                  class="w-10 h-10 rounded-lg bg-blue-50 border border-blue-100 flex items-center justify-center text-[#2563EB] group-hover:bg-[#2563EB] group-hover:text-white transition-colors duration-150">
+                 class="w-10 h-10 rounded-lg bg-blue-50 border border-blue-100 flex items-center justify-center text-[#2563EB] group-hover:bg-[#2563EB] group-hover:text-white transition-colors duration-150">
                   <i data-lucide="code-2" class="w-5.5 h-5.5"></i>
                 </div>
                 <span
-                  class="text-[10px] font-mono text-slate-400 font-semibold uppercase bg-slate-50 border border-slate-150 px-2 py-0.5 rounded-full">
+                 class="text-[10px] font-mono text-slate-400 font-semibold uppercase bg-slate-50 border border-slate-150 px-2 py-0.5 rounded-full">
                   Enterprise ready
                 </span>
               </div>
@@ -265,7 +265,7 @@
                 <h3 class="text-lg font-bold text-[#1E293B] group-hover:text-[#2563EB] transition-colors leading-tight">
                   Software Development
                 </h3>
-                <p class="text-xs sm:text-sm text-slate-500 leading-relaxed font-normal min-h-[50px]">
+                <p class="text-xs sm:text-sm text-[#E2E8F0] leading-relaxed font-normal min-h-[50px]">
                   Custom enterprise applications engineered for scalability, maintainability, and long-term business
                   value.
                 </p>
@@ -297,17 +297,17 @@
             <div class="space-y-4 mt-5">
               <div class="flex flex-wrap gap-1">
                 <span
-                  class="bg-slate-50 border border-slate-200 text-slate-600 font-mono text-[8px] px-1.5 py-0.5 rounded-md font-semibold">Java</span>
+                 class="bg-slate-50 border border-slate-200 text-slate-600 font-mono text-[8px] px-1.5 py-0.5 rounded-md font-semibold">Java</span>
                 <span
-                  class="bg-slate-50 border border-slate-200 text-slate-600 font-mono text-[8px] px-1.5 py-0.5 rounded-md font-semibold">Spring
+                 class="bg-slate-50 border border-slate-200 text-slate-600 font-mono text-[8px] px-1.5 py-0.5 rounded-md font-semibold">Spring
                   Boot</span>
                 <span
-                  class="bg-slate-50 border border-slate-200 text-slate-600 font-mono text-[8px] px-1.5 py-0.5 rounded-md font-semibold">MySQL</span>
+                 class="bg-slate-50 border border-slate-200 text-slate-600 font-mono text-[8px] px-1.5 py-0.5 rounded-md font-semibold">MySQL</span>
               </div>
 
               <div class="pt-4 border-t border-slate-100 flex items-center justify-end">
                 <a href="contact.html"
-                  class="text-xs font-semibold text-[#2563EB] inline-flex items-center space-x-1 hover:underline">
+                 class="text-xs font-semibold text-[#2563EB] inline-flex items-center space-x-1 hover:underline">
                   <span>Inquire Now</span>
                   <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
                 </a>
@@ -317,16 +317,16 @@
 
           <!-- Card 2: Artificial Intelligence -->
           <div
-            class="bg-white border border-slate-200 rounded-2xl p-6 shadow-xs hover:shadow-xl hover:border-[#2563EB]/40 transform hover:translate-y-[-4px] transition-all duration-200 flex flex-col justify-between group reveal-on-scroll"
+           class="bg-white border border-slate-200 rounded-2xl p-6 shadow-xs hover:shadow-xl hover:border-[#2563EB]/40 transform hover:translate-y-[-4px] transition-all duration-200 flex flex-col justify-between group reveal-on-scroll"
             id="service-card-1">
             <div class="space-y-4">
               <div class="flex items-center justify-between">
                 <div
-                  class="w-10 h-10 rounded-lg bg-blue-50 border border-blue-100 flex items-center justify-center text-[#2563EB] group-hover:bg-[#2563EB] group-hover:text-white transition-colors duration-150">
+                 class="w-10 h-10 rounded-lg bg-blue-50 border border-blue-100 flex items-center justify-center text-[#2563EB] group-hover:bg-[#2563EB] group-hover:text-white transition-colors duration-150">
                   <i data-lucide="brain" class="w-5.5 h-5.5"></i>
                 </div>
                 <span
-                  class="text-[10px] font-mono text-slate-400 font-semibold uppercase bg-slate-50 border border-slate-150 px-2 py-0.5 rounded-full">
+                 class="text-[10px] font-mono text-slate-400 font-semibold uppercase bg-slate-50 border border-slate-150 px-2 py-0.5 rounded-full">
                   AI cores
                 </span>
               </div>
@@ -335,7 +335,7 @@
                 <h3 class="text-lg font-bold text-[#1E293B] group-hover:text-[#2563EB] transition-colors leading-tight">
                   Artificial Intelligence
                 </h3>
-                <p class="text-xs sm:text-sm text-slate-500 leading-relaxed font-normal min-h-[50px]">
+                <p class="text-xs sm:text-sm text-[#E2E8F0] leading-relaxed font-normal min-h-[50px]">
                   Intelligent systems that leverage machine learning and AI to automate processes and unlock data-driven
                   insights.
                 </p>
@@ -367,18 +367,18 @@
             <div class="space-y-4 mt-5">
               <div class="flex flex-wrap gap-1">
                 <span
-                  class="bg-slate-50 border border-slate-200 text-slate-600 font-mono text-[8px] px-1.5 py-0.5 rounded-md font-semibold">Machine
+                 class="bg-slate-50 border border-slate-200 text-slate-600 font-mono text-[8px] px-1.5 py-0.5 rounded-md font-semibold">Machine
                   Learning</span>
                 <span
-                  class="bg-slate-50 border border-slate-200 text-slate-600 font-mono text-[8px] px-1.5 py-0.5 rounded-md font-semibold">AI
+                 class="bg-slate-50 border border-slate-200 text-slate-600 font-mono text-[8px] px-1.5 py-0.5 rounded-md font-semibold">AI
                   Systems</span>
                 <span
-                  class="bg-slate-50 border border-slate-200 text-slate-600 font-mono text-[8px] px-1.5 py-0.5 rounded-md font-semibold">Python</span>
+                 class="bg-slate-50 border border-slate-200 text-slate-600 font-mono text-[8px] px-1.5 py-0.5 rounded-md font-semibold">Python</span>
               </div>
 
               <div class="pt-4 border-t border-slate-100 flex items-center justify-end">
                 <a href="contact.html"
-                  class="text-xs font-semibold text-[#2563EB] inline-flex items-center space-x-1 hover:underline">
+                 class="text-xs font-semibold text-[#2563EB] inline-flex items-center space-x-1 hover:underline">
                   <span>Inquire Now</span>
                   <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
                 </a>
@@ -388,16 +388,16 @@
 
           <!-- Card 3: Cybersecurity -->
           <div
-            class="bg-white border border-slate-200 rounded-2xl p-6 shadow-xs hover:shadow-xl hover:border-[#2563EB]/40 transform hover:translate-y-[-4px] transition-all duration-200 flex flex-col justify-between group reveal-on-scroll"
+           class="bg-white border border-slate-200 rounded-2xl p-6 shadow-xs hover:shadow-xl hover:border-[#2563EB]/40 transform hover:translate-y-[-4px] transition-all duration-200 flex flex-col justify-between group reveal-on-scroll"
             id="service-card-2">
             <div class="space-y-4">
               <div class="flex items-center justify-between">
                 <div
-                  class="w-10 h-10 rounded-lg bg-blue-50 border border-blue-100 flex items-center justify-center text-[#2563EB] group-hover:bg-[#2563EB] group-hover:text-white transition-colors duration-150">
+                 class="w-10 h-10 rounded-lg bg-blue-50 border border-blue-100 flex items-center justify-center text-[#2563EB] group-hover:bg-[#2563EB] group-hover:text-white transition-colors duration-150">
                   <i data-lucide="shield-check" class="w-5.5 h-5.5"></i>
                 </div>
                 <span
-                  class="text-[10px] font-mono text-slate-400 font-semibold uppercase bg-slate-50 border border-slate-150 px-2 py-0.5 rounded-full">
+                 class="text-[10px] font-mono text-slate-400 font-semibold uppercase bg-slate-50 border border-slate-150 px-2 py-0.5 rounded-full">
                   Threat defense
                 </span>
               </div>
@@ -406,7 +406,7 @@
                 <h3 class="text-lg font-bold text-[#1E293B] group-hover:text-[#2563EB] transition-colors leading-tight">
                   Cybersecurity
                 </h3>
-                <p class="text-xs sm:text-sm text-slate-500 leading-relaxed font-normal min-h-[50px]">
+                <p class="text-xs sm:text-sm text-[#E2E8F0] leading-relaxed font-normal min-h-[50px]">
                   Comprehensive security solutions protecting your infrastructure, applications, and data from cyber
                   threats.
                 </p>
@@ -438,16 +438,16 @@
             <div class="space-y-4 mt-5">
               <div class="flex flex-wrap gap-1">
                 <span
-                  class="bg-slate-50 border border-slate-200 text-slate-600 font-mono text-[8px] px-1.5 py-0.5 rounded-md font-semibold">Cybersecurity
+                 class="bg-slate-50 border border-slate-200 text-slate-600 font-mono text-[8px] px-1.5 py-0.5 rounded-md font-semibold">Cybersecurity
                   Solutions</span>
                 <span
-                  class="bg-slate-50 border border-slate-200 text-slate-600 font-mono text-[8px] px-1.5 py-0.5 rounded-md font-semibold">Network
+                 class="bg-slate-50 border border-slate-200 text-slate-600 font-mono text-[8px] px-1.5 py-0.5 rounded-md font-semibold">Network
                   Security</span>
               </div>
 
               <div class="pt-4 border-t border-slate-100 flex items-center justify-end">
                 <a href="contact.html"
-                  class="text-xs font-semibold text-[#2563EB] inline-flex items-center space-x-1 hover:underline">
+                 class="text-xs font-semibold text-[#2563EB] inline-flex items-center space-x-1 hover:underline">
                   <span>Inquire Now</span>
                   <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
                 </a>
@@ -457,16 +457,16 @@
 
           <!-- Card 4: Web Development -->
           <div
-            class="bg-white border border-slate-200 rounded-2xl p-6 shadow-xs hover:shadow-xl hover:border-[#2563EB]/40 transform hover:translate-y-[-4px] transition-all duration-200 flex flex-col justify-between group reveal-on-scroll"
+           class="bg-white border border-slate-200 rounded-2xl p-6 shadow-xs hover:shadow-xl hover:border-[#2563EB]/40 transform hover:translate-y-[-4px] transition-all duration-200 flex flex-col justify-between group reveal-on-scroll"
             id="service-card-3">
             <div class="space-y-4">
               <div class="flex items-center justify-between">
                 <div
-                  class="w-10 h-10 rounded-lg bg-blue-50 border border-blue-100 flex items-center justify-center text-[#2563EB] group-hover:bg-[#2563EB] group-hover:text-white transition-colors duration-150">
+                 class="w-10 h-10 rounded-lg bg-blue-50 border border-blue-100 flex items-center justify-center text-[#2563EB] group-hover:bg-[#2563EB] group-hover:text-white transition-colors duration-150">
                   <i data-lucide="monitor" class="w-5.5 h-5.5"></i>
                 </div>
                 <span
-                  class="text-[10px] font-mono text-slate-400 font-semibold uppercase bg-slate-50 border border-slate-150 px-2 py-0.5 rounded-full">
+                 class="text-[10px] font-mono text-slate-400 font-semibold uppercase bg-slate-50 border border-slate-150 px-2 py-0.5 rounded-full">
                   UI/UX Design
                 </span>
               </div>
@@ -475,7 +475,7 @@
                 <h3 class="text-lg font-bold text-[#1E293B] group-hover:text-[#2563EB] transition-colors leading-tight">
                   Web Development
                 </h3>
-                <p class="text-xs sm:text-sm text-slate-500 leading-relaxed font-normal min-h-[50px]">
+                <p class="text-xs sm:text-sm text-[#E2E8F0] leading-relaxed font-normal min-h-[50px]">
                   High-performance web applications with responsive design, accessibility compliance, and optimized UX.
                 </p>
               </div>
@@ -506,18 +506,18 @@
             <div class="space-y-4 mt-5">
               <div class="flex flex-wrap gap-1">
                 <span
-                  class="bg-slate-50 border border-slate-200 text-slate-600 font-mono text-[8px] px-1.5 py-0.5 rounded-md font-semibold">HTML5</span>
+                 class="bg-slate-50 border border-slate-200 text-slate-600 font-mono text-[8px] px-1.5 py-0.5 rounded-md font-semibold">HTML5</span>
                 <span
-                  class="bg-slate-50 border border-slate-200 text-slate-600 font-mono text-[8px] px-1.5 py-0.5 rounded-md font-semibold">CSS3</span>
+                 class="bg-slate-50 border border-slate-200 text-slate-600 font-mono text-[8px] px-1.5 py-0.5 rounded-md font-semibold">CSS3</span>
                 <span
-                  class="bg-slate-50 border border-slate-200 text-slate-600 font-mono text-[8px] px-1.5 py-0.5 rounded-md font-semibold">JavaScript</span>
+                 class="bg-slate-50 border border-slate-200 text-slate-600 font-mono text-[8px] px-1.5 py-0.5 rounded-md font-semibold">JavaScript</span>
                 <span
-                  class="bg-slate-50 border border-slate-200 text-slate-600 font-mono text-[8px] px-1.5 py-0.5 rounded-md font-semibold">React</span>
+                 class="bg-slate-50 border border-slate-200 text-slate-600 font-mono text-[8px] px-1.5 py-0.5 rounded-md font-semibold">React</span>
               </div>
 
               <div class="pt-4 border-t border-slate-100 flex items-center justify-end">
                 <a href="contact.html"
-                  class="text-xs font-semibold text-[#2563EB] inline-flex items-center space-x-1 hover:underline">
+                 class="text-xs font-semibold text-[#2563EB] inline-flex items-center space-x-1 hover:underline">
                   <span>Inquire Now</span>
                   <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
                 </a>
@@ -527,16 +527,16 @@
 
           <!-- Card 5: Mobile Development -->
           <div
-            class="bg-white border border-slate-200 rounded-2xl p-6 shadow-xs hover:shadow-xl hover:border-[#2563EB]/40 transform hover:translate-y-[-4px] transition-all duration-200 flex flex-col justify-between group reveal-on-scroll"
+           class="bg-white border border-slate-200 rounded-2xl p-6 shadow-xs hover:shadow-xl hover:border-[#2563EB]/40 transform hover:translate-y-[-4px] transition-all duration-200 flex flex-col justify-between group reveal-on-scroll"
             id="service-card-4">
             <div class="space-y-4">
               <div class="flex items-center justify-between">
                 <div
-                  class="w-10 h-10 rounded-lg bg-blue-50 border border-blue-100 flex items-center justify-center text-[#2563EB] group-hover:bg-[#2563EB] group-hover:text-white transition-colors duration-150">
+                 class="w-10 h-10 rounded-lg bg-blue-50 border border-blue-100 flex items-center justify-center text-[#2563EB] group-hover:bg-[#2563EB] group-hover:text-white transition-colors duration-150">
                   <i data-lucide="smartphone" class="w-5.5 h-5.5"></i>
                 </div>
                 <span
-                  class="text-[10px] font-mono text-slate-400 font-semibold uppercase bg-slate-50 border border-slate-150 px-2 py-0.5 rounded-full">
+                 class="text-[10px] font-mono text-slate-400 font-semibold uppercase bg-slate-50 border border-slate-150 px-2 py-0.5 rounded-full">
                   Native &amp; Hybrid
                 </span>
               </div>
@@ -545,7 +545,7 @@
                 <h3 class="text-lg font-bold text-[#1E293B] group-hover:text-[#2563EB] transition-colors leading-tight">
                   Mobile Development
                 </h3>
-                <p class="text-xs sm:text-sm text-slate-500 leading-relaxed font-normal min-h-[50px]">
+                <p class="text-xs sm:text-sm text-[#E2E8F0] leading-relaxed font-normal min-h-[50px]">
                   Native and cross-platform mobile applications built for performance, security, and seamless user
                   experiences.
                 </p>
@@ -577,18 +577,18 @@
             <div class="space-y-4 mt-5">
               <div class="flex flex-wrap gap-1">
                 <span
-                  class="bg-slate-50 border border-slate-200 text-slate-600 font-mono text-[8px] px-1.5 py-0.5 rounded-md font-semibold">React
+                 class="bg-slate-50 border border-slate-200 text-slate-600 font-mono text-[8px] px-1.5 py-0.5 rounded-md font-semibold">React
                   Native</span>
                 <span
-                  class="bg-slate-50 border border-slate-200 text-slate-600 font-mono text-[8px] px-1.5 py-0.5 rounded-md font-semibold">JavaScript</span>
+                 class="bg-slate-50 border border-slate-200 text-slate-600 font-mono text-[8px] px-1.5 py-0.5 rounded-md font-semibold">JavaScript</span>
                 <span
-                  class="bg-slate-50 border border-slate-200 text-slate-600 font-mono text-[8px] px-1.5 py-0.5 rounded-md font-semibold">REST
+                 class="bg-slate-50 border border-slate-200 text-slate-600 font-mono text-[8px] px-1.5 py-0.5 rounded-md font-semibold">REST
                   APIs</span>
               </div>
 
               <div class="pt-4 border-t border-slate-100 flex items-center justify-end">
                 <a href="contact.html"
-                  class="text-xs font-semibold text-[#2563EB] inline-flex items-center space-x-1 hover:underline">
+                 class="text-xs font-semibold text-[#2563EB] inline-flex items-center space-x-1 hover:underline">
                   <span>Inquire Now</span>
                   <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
                 </a>
@@ -598,16 +598,16 @@
 
           <!-- Card 6: Cloud Solutions -->
           <div
-            class="bg-white border border-slate-200 rounded-2xl p-6 shadow-xs hover:shadow-xl hover:border-[#2563EB]/40 transform hover:translate-y-[-4px] transition-all duration-200 flex flex-col justify-between group reveal-on-scroll"
+           class="bg-white border border-slate-200 rounded-2xl p-6 shadow-xs hover:shadow-xl hover:border-[#2563EB]/40 transform hover:translate-y-[-4px] transition-all duration-200 flex flex-col justify-between group reveal-on-scroll"
             id="service-card-5">
             <div class="space-y-4">
               <div class="flex items-center justify-between">
                 <div
-                  class="w-10 h-10 rounded-lg bg-blue-50 border border-blue-100 flex items-center justify-center text-[#2563EB] group-hover:bg-[#2563EB] group-hover:text-white transition-colors duration-150">
+                 class="w-10 h-10 rounded-lg bg-blue-50 border border-blue-100 flex items-center justify-center text-[#2563EB] group-hover:bg-[#2563EB] group-hover:text-white transition-colors duration-150">
                   <i data-lucide="cloud" class="w-5.5 h-5.5"></i>
                 </div>
                 <span
-                  class="text-[10px] font-mono text-slate-400 font-semibold uppercase bg-slate-50 border border-slate-150 px-2 py-0.5 rounded-full">
+                 class="text-[10px] font-mono text-slate-400 font-semibold uppercase bg-slate-50 border border-slate-150 px-2 py-0.5 rounded-full">
                   Cloud scale
                 </span>
               </div>
@@ -616,7 +616,7 @@
                 <h3 class="text-lg font-bold text-[#1E293B] group-hover:text-[#2563EB] transition-colors leading-tight">
                   Cloud Solutions
                 </h3>
-                <p class="text-xs sm:text-sm text-slate-500 leading-relaxed font-normal min-h-[50px]">
+                <p class="text-xs sm:text-sm text-[#E2E8F0] leading-relaxed font-normal min-h-[50px]">
                   Cloud-native architecture, migrations, and infrastructure optimization for scalable operations.
                 </p>
               </div>
@@ -647,17 +647,17 @@
             <div class="space-y-4 mt-5">
               <div class="flex flex-wrap gap-1">
                 <span
-                  class="bg-slate-50 border border-slate-200 text-slate-600 font-mono text-[8px] px-1.5 py-0.5 rounded-md font-semibold">AWS</span>
+                 class="bg-slate-50 border border-slate-200 text-slate-600 font-mono text-[8px] px-1.5 py-0.5 rounded-md font-semibold">AWS</span>
                 <span
-                  class="bg-slate-50 border border-slate-200 text-slate-600 font-mono text-[8px] px-1.5 py-0.5 rounded-md font-semibold">Cloud
+                 class="bg-slate-50 border border-slate-200 text-slate-600 font-mono text-[8px] px-1.5 py-0.5 rounded-md font-semibold">Cloud
                   Infrastructure</span>
                 <span
-                  class="bg-slate-50 border border-slate-200 text-slate-600 font-mono text-[8px] px-1.5 py-0.5 rounded-md font-semibold">Docker</span>
+                 class="bg-slate-50 border border-slate-200 text-slate-600 font-mono text-[8px] px-1.5 py-0.5 rounded-md font-semibold">Docker</span>
               </div>
 
               <div class="pt-4 border-t border-slate-100 flex items-center justify-end">
                 <a href="contact.html"
-                  class="text-xs font-semibold text-[#2563EB] inline-flex items-center space-x-1 hover:underline">
+                 class="text-xs font-semibold text-[#2563EB] inline-flex items-center space-x-1 hover:underline">
                   <span>Inquire Now</span>
                   <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
                 </a>
@@ -667,16 +667,16 @@
 
           <!-- Card 7: IoT Solutions -->
           <div
-            class="bg-white border border-slate-200 rounded-2xl p-6 shadow-xs hover:shadow-xl hover:border-[#2563EB]/40 transform hover:translate-y-[-4px] transition-all duration-200 flex flex-col justify-between group reveal-on-scroll"
+           class="bg-white border border-slate-200 rounded-2xl p-6 shadow-xs hover:shadow-xl hover:border-[#2563EB]/40 transform hover:translate-y-[-4px] transition-all duration-200 flex flex-col justify-between group reveal-on-scroll"
             id="service-card-6">
             <div class="space-y-4">
               <div class="flex items-center justify-between">
                 <div
-                  class="w-10 h-10 rounded-lg bg-blue-50 border border-blue-100 flex items-center justify-center text-[#2563EB] group-hover:bg-[#2563EB] group-hover:text-white transition-colors duration-150">
+                 class="w-10 h-10 rounded-lg bg-blue-50 border border-blue-100 flex items-center justify-center text-[#2563EB] group-hover:bg-[#2563EB] group-hover:text-white transition-colors duration-150">
                   <i data-lucide="cpu" class="w-5.5 h-5.5"></i>
                 </div>
                 <span
-                  class="text-[10px] font-mono text-slate-400 font-semibold uppercase bg-slate-50 border border-slate-150 px-2 py-0.5 rounded-full">
+                 class="text-[10px] font-mono text-slate-400 font-semibold uppercase bg-slate-50 border border-slate-150 px-2 py-0.5 rounded-full">
                   Edge IoT
                 </span>
               </div>
@@ -685,7 +685,7 @@
                 <h3 class="text-lg font-bold text-[#1E293B] group-hover:text-[#2563EB] transition-colors leading-tight">
                   IoT Solutions
                 </h3>
-                <p class="text-xs sm:text-sm text-slate-500 leading-relaxed font-normal min-h-[50px]">
+                <p class="text-xs sm:text-sm text-[#E2E8F0] leading-relaxed font-normal min-h-[50px]">
                   Connected device ecosystems and smart systems that process and act on real-time sensor telemetry.
                 </p>
               </div>
@@ -716,18 +716,18 @@
             <div class="space-y-4 mt-5">
               <div class="flex flex-wrap gap-1">
                 <span
-                  class="bg-slate-50 border border-slate-200 text-slate-600 font-mono text-[8px] px-1.5 py-0.5 rounded-md font-semibold">Smart
+                 class="bg-slate-50 border border-slate-200 text-slate-600 font-mono text-[8px] px-1.5 py-0.5 rounded-md font-semibold">Smart
                   Systems</span>
                 <span
-                  class="bg-slate-50 border border-slate-200 text-slate-600 font-mono text-[8px] px-1.5 py-0.5 rounded-md font-semibold">IoT
+                 class="bg-slate-50 border border-slate-200 text-slate-600 font-mono text-[8px] px-1.5 py-0.5 rounded-md font-semibold">IoT
                   Protocols</span>
                 <span
-                  class="bg-slate-50 border border-slate-200 text-slate-600 font-mono text-[8px] px-1.5 py-0.5 rounded-md font-semibold">MQTT</span>
+                 class="bg-slate-50 border border-slate-200 text-slate-600 font-mono text-[8px] px-1.5 py-0.5 rounded-md font-semibold">MQTT</span>
               </div>
 
               <div class="pt-4 border-t border-slate-100 flex items-center justify-end">
                 <a href="contact.html"
-                  class="text-xs font-semibold text-[#2563EB] inline-flex items-center space-x-1 hover:underline">
+                 class="text-xs font-semibold text-[#2563EB] inline-flex items-center space-x-1 hover:underline">
                   <span>Inquire Now</span>
                   <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
                 </a>
@@ -737,16 +737,16 @@
 
           <!-- Card 8: Technology Consulting -->
           <div
-            class="bg-white border border-slate-200 rounded-2xl p-6 shadow-xs hover:shadow-xl hover:border-[#2563EB]/40 transform hover:translate-y-[-4px] transition-all duration-200 flex flex-col justify-between group reveal-on-scroll"
+           class="bg-white border border-slate-200 rounded-2xl p-6 shadow-xs hover:shadow-xl hover:border-[#2563EB]/40 transform hover:translate-y-[-4px] transition-all duration-200 flex flex-col justify-between group reveal-on-scroll"
             id="service-card-7">
             <div class="space-y-4">
               <div class="flex items-center justify-between">
                 <div
-                  class="w-10 h-10 rounded-lg bg-blue-50 border border-blue-100 flex items-center justify-center text-[#2563EB] group-hover:bg-[#2563EB] group-hover:text-white transition-colors duration-150">
+                 class="w-10 h-10 rounded-lg bg-blue-50 border border-blue-100 flex items-center justify-center text-[#2563EB] group-hover:bg-[#2563EB] group-hover:text-white transition-colors duration-150">
                   <i data-lucide="briefcase" class="w-5.5 h-5.5"></i>
                 </div>
                 <span
-                  class="text-[10px] font-mono text-slate-400 font-semibold uppercase bg-slate-50 border border-slate-150 px-2 py-0.5 rounded-full">
+                 class="text-[10px] font-mono text-slate-400 font-semibold uppercase bg-slate-50 border border-slate-150 px-2 py-0.5 rounded-full">
                   Strategic
                 </span>
               </div>
@@ -755,7 +755,7 @@
                 <h3 class="text-lg font-bold text-[#1E293B] group-hover:text-[#2563EB] transition-colors leading-tight">
                   Technology Consulting
                 </h3>
-                <p class="text-xs sm:text-sm text-slate-500 leading-relaxed font-normal min-h-[50px]">
+                <p class="text-xs sm:text-sm text-[#E2E8F0] leading-relaxed font-normal min-h-[50px]">
                   Strategic technology advisory helping organizations align technical choices with digital business
                   strategy.
                 </p>
@@ -787,16 +787,16 @@
             <div class="space-y-4 mt-5">
               <div class="flex flex-wrap gap-1">
                 <span
-                  class="bg-slate-50 border border-slate-200 text-slate-600 font-mono text-[8px] px-1.5 py-0.5 rounded-md font-semibold">Strategy</span>
+                 class="bg-slate-50 border border-slate-200 text-slate-600 font-mono text-[8px] px-1.5 py-0.5 rounded-md font-semibold">Strategy</span>
                 <span
-                  class="bg-slate-50 border border-slate-200 text-slate-600 font-mono text-[8px] px-1.5 py-0.5 rounded-md font-semibold">Architecture</span>
+                 class="bg-slate-50 border border-slate-200 text-slate-600 font-mono text-[8px] px-1.5 py-0.5 rounded-md font-semibold">Architecture</span>
                 <span
-                  class="bg-slate-50 border border-slate-200 text-slate-600 font-mono text-[8px] px-1.5 py-0.5 rounded-md font-semibold">Assessment</span>
+                 class="bg-slate-50 border border-slate-200 text-slate-600 font-mono text-[8px] px-1.5 py-0.5 rounded-md font-semibold">Assessment</span>
               </div>
 
               <div class="pt-4 border-t border-slate-100 flex items-center justify-end">
                 <a href="contact.html"
-                  class="text-xs font-semibold text-[#2563EB] inline-flex items-center space-x-1 hover:underline">
+                 class="text-xs font-semibold text-[#2563EB] inline-flex items-center space-x-1 hover:underline">
                   <span>Inquire Now</span>
                   <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
                 </a>
@@ -817,7 +817,7 @@
           <div class="absolute -top-32 -left-32 w-96 h-96 bg-[#2563EB]/10 rounded-full blur-3xl pointer-events-none">
           </div>
           <div
-            class="absolute -bottom-32 -right-32 w-96 h-96 bg-[#2563EB]/10 rounded-full blur-3xl pointer-events-none">
+           class="absolute -bottom-32 -right-32 w-96 h-96 bg-[#2563EB]/10 rounded-full blur-3xl pointer-events-none">
           </div>
 
           <div class="relative max-w-2xl mx-auto space-y-6">
@@ -827,7 +827,7 @@
             </p>
             <div class="pt-4">
               <a href="contact.html"
-                class="consultation-btn inline-flex items-center space-x-2 bg-white hover:bg-slate-100 text-slate-900 font-bold text-sm px-6 py-3.5 rounded-xl transition-all shadow-lg hover:shadow-xl hover:translate-y-[-1px]">
+               class="consultation-btn inline-flex items-center space-x-2 bg-white hover:bg-slate-100 text-slate-900 font-bold text-sm px-6 py-3.5 rounded-xl transition-all shadow-lg hover:shadow-xl hover:translate-y-[-1px]">
                 <span>Request a Consultation</span>
                 <i data-lucide="arrow-right" class="w-4 h-4 text-slate-600"></i>
               </a>
@@ -838,12 +838,12 @@
     </section>
   </main>
 
-  <footer class="footer bg-dark-navy" role="contentinfo">
+   <footer class="footer footer-premium" role="contentinfo">
     <div class="container">
       <div class="footer__grid">
-        <div class="footer__brand"> <a href="index.html" class="logo" style="color: white;">
-            <img src="logo-v4.png" alt="Aryan Software Solutions Logo" class="logo-img"
-              style="height: 38px; width: auto;">
+        <div class="footer__brand">
+          <a href="index.html" class="logo" style="color: white;">
+            <img src="logo-v4.png" alt="Aryan Software Solutions Logo" class="logo-img" style="height: 38px; width: auto;">
             <span class="logo__text">
               <span class="logo__name" style="color: white;">Aryan Software Solutions</span>
               <span class="logo__tagline" style="color: #38BDF8;">Innovate &bull; Develop &bull; Secure</span>
@@ -881,19 +881,28 @@
       </div>
       <div class="footer__bottom">
         <p>&copy; <span data-year>2026</span> Aryan Software Solutions. All rights reserved.</p>
-        <div class="footer__social"><a href="https://linkedin.com/company/aryan-software-solutions"
-            aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor"
-              aria-hidden="true">
+        <div class="footer__social">
+          <a href="https://linkedin.com/company/aryan-software-solutions" aria-label="LinkedIn" target="_blank"
+            rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path
                 d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 114.127 0 2.062 2.062 0 01-2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-            </svg></a><a href="https://github.com/aryansoftware" aria-label="GitHub" target="_blank"
-            rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            </svg>
+          </a>
+          <a href="https://github.com/aryansoftware" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path
                 d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
-            </svg></a></div>
+            </svg>
+          </a>
+        </div>
       </div>
     </div>
   </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+  <script src="assets/js/gsap-animations.js" defer></script>
   <script src="assets/js/main.js" defer></script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
