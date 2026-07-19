@@ -10,7 +10,7 @@
 
 **Enterprise software development, AI, cybersecurity, cloud & IoT solutions.**
 
-[🌐 Live Site](https://aryan-solutions.vercel.app) · [📋 Roadmap](./ROADMAP.md) · [📬 Contact](mailto:contact@aryansoftware.com)
+[🌐 Live Site](https://aryan-solutions.vercel.app) · [📋 Roadmap](./ROADMAP.md) · [📬 Contact](mailto:sriaryan.dev@gmail.com)
 
 </div>
 

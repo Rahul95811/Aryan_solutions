@@ -202,7 +202,7 @@
         // --- Error: graceful fallback ---
         if (successEl) {
           const originalMsg = successEl.textContent;
-          successEl.textContent = 'Something went wrong. Please email us directly at contact@aryansoftware.com';
+          successEl.textContent = 'Something went wrong. Please email us directly at sriaryan.dev@gmail.com';
           successEl.style.background = 'rgb(239 68 68 / 0.08)';
           successEl.style.borderColor = 'rgb(239 68 68 / 0.2)';
           successEl.style.color = '#EF4444';
